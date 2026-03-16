@@ -1,0 +1,14 @@
+/sitemap.xml  /sitemap.xml  200!
+
+/services                   /services.html              200
+/blog                       /blog.html                  200
+/cart                       /cart.html                  200
+/signin                     /signin.html                200
+/admin                      /admin.html                 200
+/services/brand-identity    /services/brand-identity.html   200
+/services/social-media      /services/social-media.html     200
+/services/seo               /services/seo.html              200
+/services/paid-ads          /services/paid-ads.html         200
+/services/web-design        /services/web-design.html       200
+/services/geo               /services/geo.html              200
+/*                          /404.html                   404

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Sign In — DesignMint</title>
+<link href="https://fonts.googleapis.com/css2?family=Cabinet+Grotesk:wght@700;800;900&family=Satoshi:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--g:#00ff87;--dk:#050a06;--dk2:#0a140b;--bdr:rgba(0,255,135,0.12);}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Satoshi',sans-serif;background:var(--dk2);min-height:100vh;display:flex;flex-direction:column;color:#e8f5eb;}
+body.light{background:#f0fdf6;color:#0a1a10;}
+
+.topbar{padding:14px 5%;display:flex;justify-content:space-between;align-items:center;background:rgba(5,10,6,0.5);border-bottom:1px solid var(--bdr);}
+body.light .topbar{background:rgba(255,255,255,0.8);border-color:rgba(0,150,80,0.12);}
+.back{font-size:13px;color:rgba(255,255,255,0.45);text-decoration:none;display:flex;align-items:center;gap:5px;font-weight:600;}
+.back:hover{color:var(--g);}
+body.light .back{color:rgba(0,0,0,0.4);}
+.theme-btn{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:50px;padding:6px 13px;font-size:12px;font-weight:700;color:#fff;cursor:pointer;font-family:inherit;}
+body.light .theme-btn{background:rgba(0,0,0,0.05);border-color:rgba(0,0,0,0.1);color:#0a1a10;}
+
+.wrap{flex:1;display:flex;align-items:center;justify-content:center;padding:24px 5%;}
+.card{background:var(--dk);border:1px solid var(--bdr);border-radius:20px;padding:36px 32px;width:100%;max-width:400px;}
+body.light .card{background:#fff;border-color:rgba(0,150,80,0.15);}
+
+.logo-area{text-align:center;margin-bottom:24px;}
+.logo-area img{height:44px;margin-bottom:8px;display:block;margin-left:auto;margin-right:auto;}
+.logo-txt{font-family:'Cabinet Grotesk',sans-serif;font-size:22px;font-weight:900;color:var(--g);}
+.logo-txt span{color:#fff;}
+body.light .logo-txt span{color:#0a1a10;}
+
+.redirect-bar{background:rgba(0,255,135,0.07);border:1px solid rgba(0,255,135,0.15);border-radius:8px;padding:10px 14px;font-size:12px;color:rgba(0,255,135,0.8);margin-bottom:18px;text-align:center;display:none;}
+
+.tabs{display:grid;grid-template-columns:1fr 1fr;background:rgba(255,255,255,0.04);border-radius:8px;padding:3px;margin-bottom:22px;}
+body.light .tabs{background:rgba(0,0,0,0.04);}
+.tab{padding:9px;text-align:center;font-size:13.5px;font-weight:700;color:rgba(255,255,255,0.38);cursor:pointer;border-radius:6px;transition:all .2s;user-select:none;}
+body.light .tab{color:rgba(0,0,0,0.35);}
+.tab.on{background:var(--g);color:#050a06;}
+
+.panel{display:none;}.panel.on{display:block;}
+.ptitle{font-family:'Cabinet Grotesk',sans-serif;font-size:19px;font-weight:900;color:#fff;margin-bottom:4px;}
+body.light .ptitle{color:#0a1a10;}
+.psub{font-size:12.5px;color:rgba(255,255,255,0.35);margin-bottom:20px;}
+body.light .psub{color:#4a6a55;}
+
+.err{display:none;background:rgba(255,80,80,0.08);border:1px solid rgba(255,80,80,0.2);border-radius:7px;padding:11px;font-size:13px;color:#ff6b6b;margin-bottom:12px;text-align:center;}
+.ok{display:none;background:rgba(0,255,135,0.08);border:1px solid rgba(0,255,135,0.2);border-radius:7px;padding:11px;font-size:13px;color:var(--g);margin-bottom:12px;text-align:center;}
+
+/* Google Button */
+.google-btn{width:100%;background:#fff;border:1.5px solid #dadce0;border-radius:8px;padding:11px;font-size:13.5px;font-weight:600;color:#3c4043;cursor:pointer;font-family:'Satoshi',sans-serif;display:flex;align-items:center;justify-content:center;gap:10px;transition:box-shadow .2s,border-color .2s;margin-bottom:16px;}
+.google-btn:hover{box-shadow:0 1px 8px rgba(0,0,0,0.2);border-color:#aaa;}
+
+.divider{text-align:center;font-size:11.5px;color:rgba(255,255,255,0.2);margin:4px 0 16px;position:relative;}
+.divider::before,.divider::after{content:'';position:absolute;top:50%;width:40%;height:1px;background:rgba(255,255,255,0.08);}
+.divider::before{left:0;}.divider::after{right:0;}
+body.light .divider{color:rgba(0,0,0,0.2);}
+body.light .divider::before,body.light .divider::after{background:rgba(0,0,0,0.08);}
+
+.f-grp{display:flex;flex-direction:column;gap:5px;margin-bottom:12px;}
+.f-lbl{font-size:10.5px;font-weight:700;color:rgba(255,255,255,0.35);letter-spacing:.5px;text-transform:uppercase;}
+body.light .f-lbl{color:rgba(0,0,0,0.4);}
+.f-inp{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.09);border-radius:8px;padding:11px 14px;font-size:13.5px;color:#fff;font-family:'Satoshi',sans-serif;outline:none;transition:border-color .2s;width:100%;}
+.f-inp:focus{border-color:var(--g);}
+.f-inp::placeholder{color:rgba(255,255,255,0.18);}
+body.light .f-inp{background:#f4faf6;border-color:rgba(0,120,60,0.15);color:#0a1a10;}
+body.light .f-inp::placeholder{color:rgba(0,0,0,0.25);}
+
+.sub-btn{width:100%;background:var(--g);color:#050a06;padding:13px;border-radius:8px;font-size:14px;font-weight:800;border:none;cursor:pointer;font-family:'Satoshi',sans-serif;transition:opacity .2s;margin-top:4px;}
+.sub-btn:hover{opacity:.85;}
+
+.switch-link{text-align:center;margin-top:14px;font-size:13px;color:rgba(255,255,255,0.35);}
+body.light .switch-link{color:rgba(0,0,0,0.35);}
+.switch-link a{color:var(--g);cursor:pointer;font-weight:700;}
+
+.wa-float{position:fixed;bottom:24px;right:24px;width:50px;height:50px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;z-index:900;box-shadow:0 4px 18px rgba(37,211,102,0.35);}
+</style>
+</head>
+<body>
+<a class="wa-float" href="https://wa.me/919629835281" target="_blank">💬</a>
+
+<div class="topbar">
+  <a href="/" class="back">← DesignMint</a>
+  <button class="theme-btn" id="theme-toggle" onclick="toggleTheme()">☀️ Light</button>
+</div>
+
+<div class="wrap">
+  <div class="card">
+    <div class="logo-area">
+      <img src="designmint_logo.png" alt="DesignMint" onerror="this.style.display='none'">
+      <div class="logo-txt">Design<span>Mint.</span></div>
+    </div>
+
+    <div class="redirect-bar" id="redirect-bar">🔐 Sign in to continue</div>
+
+    <div class="tabs">
+      <div class="tab on" id="tab-in" onclick="switchTab('in')">Sign In</div>
+      <div class="tab" id="tab-up" onclick="switchTab('up')">Sign Up</div>
+    </div>
+
+    <!-- SIGN IN -->
+    <div class="panel on" id="panel-in">
+      <div class="ptitle">Welcome Back</div>
+      <div class="psub">Sign in to your DesignMint account</div>
+      <div class="err" id="in-err"></div>
+      <div class="ok" id="in-ok"></div>
+
+      <button class="google-btn" onclick="googleLogin()">
+        <svg width="18" height="18" viewBox="0 0 24 24">
+          <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+          <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+          <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"/>
+          <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+        </svg>
+        Continue with Google
+      </button>
+
+      <div class="divider">or use email</div>
+
+      <div class="f-grp"><label class="f-lbl">Email</label><input class="f-inp" type="email" id="si-email" placeholder="your@email.com" onkeydown="if(event.key==='Enter')doSignIn()"></div>
+      <div class="f-grp"><label class="f-lbl">Password</label><input class="f-inp" type="password" id="si-pass" placeholder="Your password" onkeydown="if(event.key==='Enter')doSignIn()"></div>
+      <button class="sub-btn" onclick="doSignIn()">Sign In →</button>
+      <div class="switch-link">No account? <a onclick="switchTab('up')">Sign up free</a></div>
+    </div>
+
+    <!-- SIGN UP -->
+    <div class="panel" id="panel-up">
+      <div class="ptitle">Create Account</div>
+      <div class="psub">Join DesignMint — free forever</div>
+      <div class="err" id="up-err"></div>
+      <div class="ok" id="up-ok"></div>
+
+      <button class="google-btn" onclick="googleLogin()">
+        <svg width="18" height="18" viewBox="0 0 24 24">
+          <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+          <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+          <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"/>
+          <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+        </svg>
+        Sign up with Google
+      </button>
+
+      <div class="divider">or use email</div>
+
+      <div class="f-grp"><label class="f-lbl">Full Name *</label><input class="f-inp" type="text" id="su-name" placeholder="Your full name"></div>
+      <div class="f-grp"><label class="f-lbl">Email *</label><input class="f-inp" type="email" id="su-email" placeholder="your@email.com"></div>
+      <div class="f-grp"><label class="f-lbl">Phone *</label><input class="f-inp" type="tel" id="su-phone" placeholder="+91 99999 99999"></div>
+      <div class="f-grp"><label class="f-lbl">Password *</label><input class="f-inp" type="password" id="su-pass" placeholder="Min 6 characters" onkeydown="if(event.key==='Enter')doSignUp()"></div>
+      <button class="sub-btn" onclick="doSignUp()">Create Account →</button>
+      <div class="switch-link">Have account? <a onclick="switchTab('in')">Sign in</a></div>
+    </div>
+  </div>
+</div>
+
+<script>
+const Auth={get:()=>JSON.parse(localStorage.getItem('dm_user')||'null'),set:(u)=>localStorage.setItem('dm_user',JSON.stringify(u))};
+
+// Theme
+function toggleTheme(){
+  const l=document.body.classList.toggle('light');
+  document.getElementById('theme-toggle').textContent=l?'🌙 Dark':'☀️ Light';
+  localStorage.setItem('dm_theme',l?'light':'dark');
+}
+if(localStorage.getItem('dm_theme')==='light'){document.body.classList.add('light');document.getElementById('theme-toggle').textContent='🌙 Dark';}
+
+// Redirect logic
+function getRedirect(){return new URLSearchParams(window.location.search).get('r')||'/';}
+function goAfter(){window.location.href=getRedirect();}
+if(new URLSearchParams(window.location.search).get('r'))document.getElementById('redirect-bar').style.display='block';
+if(Auth.get())goAfter();
+
+// Tab switch
+function switchTab(t){
+  ['in','up'].forEach(x=>{
+    document.getElementById('tab-'+x).classList.toggle('on',x===t);
+    document.getElementById('panel-'+x).classList.toggle('on',x===t);
+  });
+}
+
+function showErr(id,msg){const e=document.getElementById(id+'-err');e.textContent=msg;e.style.display='block';document.getElementById(id+'-ok').style.display='none';}
+function showOk(id,msg){const e=document.getElementById(id+'-ok');e.textContent=msg;e.style.display='block';document.getElementById(id+'-err').style.display='none';}
+
+// Google Login — opens Google account picker
+function googleLogin(){
+  // Try Google One Tap / OAuth
+  // Since we're on a static site, we simulate with a clean prompt
+  // In production: integrate Firebase Auth or Google OAuth 2.0
+  const popup = window.open('','googleAuth','width=500,height=600,scrollbars=yes');
+  if(popup){
+    popup.document.write(`
+      <html><head><title>Google Sign In</title>
+      <style>body{font-family:Arial,sans-serif;display:flex;align-items:center;justify-content:center;min-height:100vh;background:#f8f9fa;margin:0;}
+      .card{background:#fff;border-radius:12px;padding:36px;max-width:360px;width:100%;box-shadow:0 2px 24px rgba(0,0,0,0.1);text-align:center;}
+      .g-logo{font-size:28px;margin-bottom:8px;}
+      h2{font-size:20px;color:#202124;margin-bottom:6px;}
+      p{font-size:13px;color:#5f6368;margin-bottom:24px;}
+      input{width:100%;padding:12px;border:1.5px solid #dadce0;border-radius:6px;font-size:14px;margin-bottom:14px;box-sizing:border-box;outline:none;}
+      input:focus{border-color:#1a73e8;}
+      button{width:100%;background:#1a73e8;color:#fff;padding:12px;border-radius:6px;font-size:14px;font-weight:600;border:none;cursor:pointer;}
+      button:hover{background:#1557b0;}
+      .hint{font-size:11px;color:#aaa;margin-top:12px;}
+      </style></head><body>
+      <div class="card">
+        <div class="g-logo">
+          <svg width="40" height="40" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+        </div>
+        <h2>Sign in with Google</h2>
+        <p>Use your Google account to sign in to DesignMint</p>
+        <input type="text" id="g-name" placeholder="Your full name" required>
+        <input type="email" id="g-email" placeholder="your@gmail.com" required>
+        <button onclick="submitGoogle()">Sign In with Google</button>
+        <div class="hint">Enter your Google account details</div>
+      </div>
+      <script>
+      function submitGoogle(){
+        const n=document.getElementById('g-name').value.trim();
+        const e=document.getElementById('g-email').value.trim();
+        if(!n||!e){alert('Please fill both fields');return;}
+        if(!e.includes('@')){alert('Please enter valid email');return;}
+        window.opener.receiveGoogleLogin(n,e);
+        window.close();
+      }
+      <\/script>
+      </html>
+    `);
+  } else {
+    // Popup blocked — fallback
+    const n=prompt('Enter your name:');
+    if(!n)return;
+    const e=prompt('Enter your Gmail:');
+    if(!e||!e.includes('@'))return;
+    receiveGoogleLogin(n,e);
+  }
+}
+
+window.receiveGoogleLogin = function(name, email){
+  Auth.set({name:name.trim(),email:email.trim(),role:'client',provider:'google'});
+  showOk('in','✅ Welcome, '+name.split(' ')[0]+'! Signing you in...');
+  setTimeout(goAfter,1000);
+};
+
+function doSignIn(){
+  const email=document.getElementById('si-email').value.trim();
+  const pass=document.getElementById('si-pass').value;
+  if(!email||!pass){showErr('in','Please enter your email and password.');return;}
+  if(email==='designmint71@gmail.com'&&pass==='DesignMint@2025'){
+    Auth.set({name:'Admin',email,role:'admin'});
+    showOk('in','✅ Admin login successful!');
+    setTimeout(()=>window.location.href='admin.html',900);
+    return;
+  }
+  const users=JSON.parse(localStorage.getItem('dm_users')||'[]');
+  const u=users.find(u=>u.email===email&&u.pass===pass);
+  if(u){Auth.set({name:u.name,email:u.email,phone:u.phone,role:'client'});showOk('in','✅ Welcome back, '+u.name.split(' ')[0]+'!');setTimeout(goAfter,900);}
+  else showErr('in','❌ Incorrect email or password. Please try again.');
+}
+
+function doSignUp(){
+  const name=document.getElementById('su-name').value.trim();
+  const email=document.getElementById('su-email').value.trim();
+  const phone=document.getElementById('su-phone').value.trim();
+  const pass=document.getElementById('su-pass').value;
+  if(!name||!email||!phone||!pass){showErr('up','Please fill in all required fields.');return;}
+  if(pass.length<6){showErr('up','Password must be at least 6 characters.');return;}
+  if(!email.includes('@')){showErr('up','Please enter a valid email address.');return;}
+  const users=JSON.parse(localStorage.getItem('dm_users')||'[]');
+  if(users.find(u=>u.email===email)){showErr('up','This email is already registered. Please sign in.');return;}
+  users.push({name,email,phone,pass,role:'client',joinedAt:new Date().toISOString()});
+  localStorage.setItem('dm_users',JSON.stringify(users));
+  Auth.set({name,email,phone,role:'client'});
+  showOk('up','✅ Account created! Welcome, '+name.split(' ')[0]+'!');
+  setTimeout(goAfter,1000);
+}
+</script>
+</body>
+</html>

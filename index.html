@@ -1,0 +1,1180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DesignMint — Global Branding & Digital Agency</title>
+<meta name="description" content="DesignMint is a global branding and digital marketing agency. We build brands that dominate markets. Logo, SEO, GEO, Social Media, Paid Ads, Web Design. Build your brand today.">
+<link href="https://fonts.googleapis.com/css2?family=Cabinet+Grotesk:wght@400;500;700;800;900&family=Satoshi:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --g:#00ff87;--g2:#00cc6a;--dk:#050a06;--dk2:#0a140b;
+  --wh:#fff;--tx:#e8f5eb;--mu:#7a9e82;--bdr:rgba(0,255,135,0.1);
+  --card:rgba(255,255,255,0.03);--glass:rgba(0,255,135,0.05);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Satoshi',sans-serif;background:var(--dk);color:var(--tx);overflow-x:hidden;cursor:none;}
+
+
+/* ── VIDEO HERO ── */
+#hero{position:relative;}
+.hero-video-wrap{position:absolute;inset:0;z-index:0;overflow:hidden;}
+.hero-video-wrap video{width:100%;height:100%;object-fit:cover;opacity:0.12;}
+.hero-video-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(5,10,6,0.92) 0%,rgba(5,10,6,0.75) 60%,rgba(5,10,6,0.88) 100%);}
+
+
+
+
+
+/* ── LIGHT THEME ── */
+body.light{
+  --g:#00b85e;--dk:#ffffff;--dk2:#f4faf6;
+  --tx:#0a1a10;--mu:#4a6a55;--bdr:rgba(0,120,60,0.15);
+  --card:rgba(0,0,0,0.03);
+  background:#ffffff;color:#0a1a10;
+}
+body.light nav{background:rgba(255,255,255,0.97);border-bottom:1px solid rgba(0,120,60,0.12);}
+body.light .nav-logo-txt{color:#00b85e;}
+body.light .nav-logo-txt span{color:#0a1a10;}
+body.light .nav-links a{color:#3a5a45;}
+body.light .nav-links a:hover{color:#00b85e;}
+body.light .nav-cart-btn{background:rgba(0,120,60,0.07);border-color:rgba(0,120,60,0.15);color:#0a1a10;}
+body.light .nav-auth{background:rgba(0,0,0,0.04);border-color:rgba(0,0,0,0.1);color:#0a1a10;}
+body.light .nav-cta{background:#00b85e;color:#fff;}
+body.light .hamburger span{background:#0a1a10;}
+body.light #hero{background:#f0fdf6;}
+body.light .hero-grid-bg{background-image:linear-gradient(rgba(0,150,80,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(0,150,80,0.04) 1px,transparent 1px);}
+body.light .hero-h1{color:#0a1a10;}
+body.light .hero-h1 .acc{color:#00b85e;}
+body.light .hero-h1 .outline{-webkit-text-stroke:1px rgba(0,0,0,0.15);color:transparent;}
+body.light .hero-p{color:rgba(0,0,0,0.55);}
+body.light .hero-tag-item{color:rgba(0,0,0,0.45);}
+body.light .hero-eyebrow{background:rgba(0,150,80,0.07);border-color:rgba(0,150,80,0.2);color:#00b85e;}
+body.light .hstat{background:rgba(0,0,0,0.03);border-color:rgba(0,0,0,0.07);}
+body.light .hstat-n{color:#00b85e;}
+body.light .hstat-l{color:rgba(0,0,0,0.4);}
+body.light .hero-card{background:#fff;border-color:rgba(0,150,80,0.15);}
+body.light .hc-title{color:#0a1a10;}
+body.light .hc-name{color:#2a4a35;}
+body.light .hc-row{border-bottom-color:rgba(0,0,0,0.06);}
+body.light #about{background:#0a1a10;}
+body.light #services{background:#f4faf6;}
+body.light .svc-card{background:#fff;border-color:rgba(0,0,0,0.08);}
+body.light .svc-card:hover{border-color:#00b85e;}
+body.light .svc-t{color:#0a1a10;}
+body.light .svc-d{color:#4a6a55;}
+body.light #portfolio{background:#0a1a10;}
+body.light #gallery{background:#fff;}
+body.light .gal-card{background:#f0f0f0;}
+body.light #why{background:#0a1a10;}
+body.light #process{background:#f4faf6;}
+body.light .pstep-num{background:#f4faf6;border-color:rgba(0,150,80,0.2);color:#00b85e;}
+body.light .pstep-t{color:#0a1a10;}
+body.light .pstep-d{color:#4a6a55;}
+body.light #industries{background:#fff;}
+body.light .ind-card{background:#f4faf6;border-color:rgba(0,0,0,0.07);}
+body.light .ind-card:hover{background:#d4f5e5;border-color:#00b85e;}
+body.light .ind-t{color:#0a1a10;}
+body.light #testimonials{background:#f4faf6;}
+body.light .testi-card{background:#fff;border-color:rgba(0,0,0,0.08);}
+body.light .testi-text{color:#3a5a45;}
+body.light .testi-name{color:#0a1a10;}
+body.light #faq{background:#fff;}
+body.light .faq-item{border-bottom-color:rgba(0,0,0,0.08);}
+body.light .faq-q{color:#0a1a10;}
+body.light .faq-a-inner{color:#4a6a55;}
+body.light #pricing{background:#f4faf6;}
+body.light .price-card{background:#fff;border-color:rgba(0,0,0,0.08);}
+body.light .price-amt{color:#0a1a10;}
+body.light .price-per{color:#4a6a55;}
+body.light .price-plan{color:#6a8a75;}
+body.light .price-div{background:rgba(0,0,0,0.08);}
+body.light .pf{color:#4a6a55;}
+body.light .pb-out{border-color:rgba(0,0,0,0.15);color:#0a1a10;}
+body.light .pb-out:hover{border-color:#00b85e;color:#00b85e;}
+body.light #contact{background:#0a1a10;}
+body.light footer{background:#050a06;}
+body.light .sec-title{color:#0a1a10;}
+body.light .sec-sub{color:#4a6a55;}
+body.light .card{background:rgba(0,0,0,0.03);border-color:rgba(0,0,0,0.08);}
+body.light .marquee-sec{background:#00b85e;}
+
+/* Theme toggle button */
+.theme-toggle{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:50px;padding:7px 14px;color:#fff;font-size:13px;font-weight:700;cursor:pointer;font-family:inherit;transition:all .2s;display:flex;align-items:center;gap:6px;}
+body.light .theme-toggle{background:rgba(0,0,0,0.05);border-color:rgba(0,0,0,0.12);color:#0a1a10;}
+.theme-toggle:hover{opacity:.85;}
+
+/* ── CUSTOM CURSOR ── */
+.cursor{position:fixed;width:10px;height:10px;background:var(--g);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:transform .1s;mix-blend-mode:difference;}
+.cursor-ring{position:fixed;width:36px;height:36px;border:1.5px solid rgba(0,255,135,0.4);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:all .15s ease;}
+
+/* ── NOISE TEXTURE ── */
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");pointer-events:none;z-index:0;opacity:.4;}
+
+/* ── TOP ANNOUNCEMENT ── */
+.announce{background:var(--g);padding:9px 5%;text-align:center;position:relative;z-index:50;}
+.announce-inner{display:flex;align-items:center;justify-content:center;gap:12px;font-size:13px;font-weight:700;color:#050a06;}
+.announce-badge{background:#050a06;color:var(--g);font-size:10px;font-weight:800;padding:2px 8px;border-radius:20px;}
+
+/* ── NAVBAR ── */
+nav{position:sticky;top:0;z-index:100;padding:0 5%;display:flex;align-items:center;justify-content:space-between;background:rgba(5,10,6,0.9);backdrop-filter:blur(24px);border-bottom:1px solid var(--bdr);}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;padding:18px 0;}
+.nav-logo img{height:54px;width:auto;object-fit:contain;filter:brightness(1.1);}
+.nav-logo-txt{font-family:'Cabinet Grotesk',sans-serif;font-size:22px;font-weight:900;color:var(--g);letter-spacing:-0.5px;}
+.nav-logo-txt span{color:#fff;}
+.nav-links{display:flex;gap:0;list-style:none;}
+.nav-links a{display:block;padding:22px 16px;font-size:13.5px;font-weight:700;color:rgba(255,255,255,0.55);text-decoration:none;transition:color .2s;letter-spacing:.2px;}
+.nav-links a:hover{color:var(--g);}
+.nav-right{display:flex;align-items:center;gap:12px;}
+.nav-badge{background:var(--glass);border:1px solid var(--bdr);border-radius:50px;padding:6px 14px;font-size:12px;color:var(--g);font-weight:700;display:flex;align-items:center;gap:5px;}
+.nav-badge-dot{width:6px;height:6px;background:var(--g);border-radius:50%;animation:pulse 2s infinite;}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(1.5)}}
+.nav-cta{background:var(--g);color:#050a06;padding:10px 22px;border-radius:6px;font-size:13px;font-weight:800;text-decoration:none;letter-spacing:.3px;transition:transform .2s,opacity .2s;}
+.nav-cta:hover{transform:translateY(-1px);opacity:.9;}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;}
+.hamburger span{width:22px;height:1.5px;background:#fff;border-radius:2px;}
+
+/* ── HERO ── */
+#hero{min-height:100vh;display:flex;align-items:center;padding:100px 5% 80px;position:relative;overflow:hidden;}
+.hero-grid-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(0,255,135,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(0,255,135,0.03) 1px,transparent 1px);background-size:60px 60px;z-index:0;}
+.hero-glow{position:absolute;width:600px;height:600px;background:radial-gradient(circle,rgba(0,255,135,0.07) 0%,transparent 70%);top:-100px;right:-100px;z-index:0;}
+.hero-glow2{position:absolute;width:400px;height:400px;background:radial-gradient(circle,rgba(0,255,135,0.05) 0%,transparent 70%);bottom:-100px;left:10%;z-index:0;}
+.hero-inner{max-width:1200px;margin:0 auto;width:100%;position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
+.hero-left{}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(0,255,135,0.08);border:1px solid rgba(0,255,135,0.2);border-radius:50px;padding:6px 14px;font-size:12px;color:var(--g);font-weight:700;margin-bottom:28px;letter-spacing:.5px;text-transform:uppercase;}
+.hero-h1{font-family:'Cabinet Grotesk',sans-serif;font-size:clamp(40px,6vw,84px);font-weight:900;color:#fff;line-height:.95;letter-spacing:-2px;margin-bottom:24px;}
+.hero-h1 .line{display:block;overflow:hidden;}
+.hero-h1 .acc{color:var(--g);}
+.hero-h1 .outline{-webkit-text-stroke:1px rgba(255,255,255,0.3);color:transparent;}
+.hero-p{font-size:16px;color:rgba(255,255,255,0.5);line-height:1.8;max-width:480px;margin-bottom:32px;}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:44px;}
+.hbtn-p{background:var(--g);color:#050a06;padding:15px 32px;border-radius:6px;font-size:14px;font-weight:800;text-decoration:none;letter-spacing:.3px;transition:transform .2s,opacity .2s;display:inline-flex;align-items:center;gap:8px;}
+.hbtn-p:hover{transform:translateY(-2px);opacity:.9;}
+.hbtn-s{background:transparent;color:#fff;padding:15px 32px;border-radius:6px;font-size:14px;font-weight:700;text-decoration:none;border:1px solid rgba(255,255,255,0.15);transition:border-color .2s,background .2s;}
+.hbtn-s:hover{border-color:var(--g);background:rgba(0,255,135,0.05);}
+.hero-stats-row{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;}
+.hstat{background:rgba(255,255,255,0.03);border:1px solid rgba(0,255,135,0.1);border-radius:10px;padding:18px 16px;text-align:center;}
+.hstat-n{font-family:'Cabinet Grotesk',sans-serif;font-size:30px;font-weight:900;color:var(--g);line-height:1;}
+.hstat-l{font-size:11px;color:rgba(255,255,255,0.3);margin-top:4px;letter-spacing:.5px;text-transform:uppercase;}
+/* Hero right panel */
+.hero-right{display:flex;flex-direction:column;gap:14px;}
+.hero-card-big{background:rgba(255,255,255,0.03);border:1px solid rgba(0,255,135,0.15);border-radius:20px;padding:28px;overflow:hidden;position:relative;}
+.hero-card-big::before{content:'';position:absolute;top:-40px;right:-40px;width:180px;height:180px;background:radial-gradient(circle,rgba(0,255,135,0.08),transparent 70%);pointer-events:none;}
+.hcb-label{font-size:10px;font-weight:800;color:rgba(0,255,135,0.5);letter-spacing:2px;text-transform:uppercase;margin-bottom:14px;}
+.hcb-row{display:flex;align-items:center;gap:12px;padding:11px 0;border-bottom:1px solid rgba(255,255,255,0.05);}
+.hcb-row:last-child{border-bottom:none;}
+.hcb-ico{width:36px;height:36px;background:rgba(0,255,135,0.08);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;}
+.hcb-name{font-size:13.5px;color:rgba(255,255,255,0.75);font-weight:600;flex:1;}
+.hcb-arr{color:var(--g);font-size:14px;}
+.hero-mini-cards{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.hmc{background:rgba(255,255,255,0.03);border:1px solid rgba(0,255,135,0.08);border-radius:12px;padding:16px;text-align:center;transition:border-color .2s;}
+.hmc:hover{border-color:rgba(0,255,135,0.25);}
+.hmc-n{font-family:'Cabinet Grotesk',sans-serif;font-size:22px;font-weight:900;color:var(--g);margin-bottom:4px;}
+.hmc-l{font-size:11px;color:rgba(255,255,255,0.3);text-transform:uppercase;letter-spacing:.5px;}
+.hero-sub-row{display:none;}
+.hero-tags{display:none;}
+
+/* ── MARQUEE ── */
+.marquee-sec{background:var(--g);padding:14px 0;overflow:hidden;}
+.marquee-track{display:flex;gap:0;animation:marquee 25s linear infinite;width:max-content;}
+.marquee-item{font-family:'Cabinet Grotesk',sans-serif;font-size:13px;font-weight:800;color:#050a06;padding:0 28px;white-space:nowrap;display:flex;align-items:center;gap:12px;}
+.marquee-sep{width:4px;height:4px;background:#050a06;border-radius:50%;opacity:.4;}
+@keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* ── SECTION BASE ── */
+.sec{padding:100px 5%;position:relative;}
+.sec-inner{max-width:1200px;margin:0 auto;}
+.sec-tag{font-size:10.5px;font-weight:800;color:var(--g);letter-spacing:3px;text-transform:uppercase;margin-bottom:12px;}
+.sec-title{font-family:'Cabinet Grotesk',sans-serif;font-size:clamp(28px,4vw,52px);font-weight:900;color:#fff;line-height:1.05;letter-spacing:-1px;margin-bottom:14px;}
+.sec-title .acc{color:var(--g);}
+.sec-sub{font-size:15.5px;color:rgba(255,255,255,0.45);line-height:1.75;max-width:560px;}
+.sec-head{margin-bottom:56px;}
+.sec-head.center{text-align:center;}
+.sec-head.center .sec-sub{margin:0 auto;}
+
+/* ── SERVICES ── */
+#services{background:var(--dk2);}
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(0,255,135,0.06);}
+.svc-card{background:var(--dk2);padding:36px 32px;transition:background .3s;cursor:default;position:relative;overflow:hidden;}
+.svc-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--g);transform:scaleX(0);transition:transform .3s;transform-origin:left;}
+.svc-card:hover{background:rgba(0,255,135,0.03);}
+.svc-card:hover::after{transform:scaleX(1);}
+.svc-num{font-family:'Cabinet Grotesk',sans-serif;font-size:11px;font-weight:900;color:rgba(0,255,135,0.3);letter-spacing:2px;margin-bottom:20px;}
+.svc-ico{font-size:32px;margin-bottom:16px;display:block;}
+.svc-t{font-family:'Cabinet Grotesk',sans-serif;font-size:19px;font-weight:800;color:#fff;margin-bottom:10px;letter-spacing:-.3px;}
+.svc-d{font-size:13.5px;color:rgba(255,255,255,0.4);line-height:1.7;margin-bottom:18px;}
+.svc-link{font-size:12.5px;font-weight:700;color:var(--g);text-decoration:none;display:inline-flex;align-items:center;gap:5px;letter-spacing:.3px;}
+.svc-link:hover span{transform:translateX(4px);}
+.svc-link span{transition:transform .2s;display:inline-block;}
+.svc-tag-pill{display:inline-block;background:rgba(0,255,135,0.1);color:var(--g);font-size:9.5px;font-weight:800;padding:3px 9px;border-radius:20px;margin-left:8px;letter-spacing:.5px;}
+
+/* ── ABOUT / FOUNDER ── */
+#about{background:var(--dk);}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
+.about-visual{position:relative;}
+.about-logo-frame{background:var(--dk2);border:1px solid var(--bdr);border-radius:20px;padding:48px;display:flex;align-items:center;justify-content:center;aspect-ratio:1;max-width:420px;}
+.about-logo-frame img{width:100%;max-width:280px;object-fit:contain;}
+.about-float{position:absolute;background:var(--g);border-radius:12px;padding:16px 20px;}
+.about-float-1{bottom:-20px;right:-10px;}
+.about-float-2{top:-16px;left:-10px;background:var(--dk2);border:1px solid var(--bdr);}
+.af-n{font-family:'Cabinet Grotesk',sans-serif;font-size:24px;font-weight:900;color:#050a06;line-height:1;}
+.af-l{font-size:11px;color:rgba(5,10,6,0.6);margin-top:2px;font-weight:700;}
+.af2-n{font-family:'Cabinet Grotesk',sans-serif;font-size:14px;font-weight:800;color:var(--g);}
+.af2-l{font-size:11px;color:rgba(255,255,255,0.4);margin-top:2px;}
+.about-content{display:flex;flex-direction:column;gap:24px;}
+.about-story{font-size:16px;color:rgba(255,255,255,0.55);line-height:1.8;}
+.about-vals{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.aval{background:var(--card);border:1px solid var(--bdr);border-radius:10px;padding:16px;transition:border-color .2s,background .2s;}
+.aval:hover{border-color:rgba(0,255,135,0.3);background:var(--glass);}
+.aval-ico{font-size:20px;margin-bottom:8px;}
+.aval-t{font-family:'Cabinet Grotesk',sans-serif;font-size:13.5px;font-weight:800;color:#fff;margin-bottom:3px;}
+.aval-d{font-size:12px;color:rgba(255,255,255,0.35);line-height:1.55;}
+.founder-chip{background:var(--dk2);border:1px solid var(--bdr);border-radius:12px;padding:18px;display:flex;align-items:center;gap:14px;transition:border-color .2s;}
+.founder-chip:hover{border-color:rgba(0,255,135,0.3);}
+.founder-av{width:50px;height:50px;border-radius:50%;background:linear-gradient(135deg,var(--g),#00994d);display:flex;align-items:center;justify-content:center;font-family:'Cabinet Grotesk',sans-serif;font-weight:900;font-size:18px;color:#050a06;flex-shrink:0;}
+.founder-name{font-family:'Cabinet Grotesk',sans-serif;font-weight:800;color:#fff;font-size:14px;}
+.founder-role{font-size:12px;color:rgba(255,255,255,0.35);margin-top:2px;}
+.founder-quote{font-size:12px;color:rgba(0,255,135,0.6);font-style:italic;margin-top:5px;line-height:1.5;}
+.founder-wa{margin-left:auto;background:var(--g);color:#050a06;padding:8px 16px;border-radius:6px;font-size:12px;font-weight:800;text-decoration:none;white-space:nowrap;flex-shrink:0;transition:opacity .2s;}
+.founder-wa:hover{opacity:.85;}
+
+/* ── INDUSTRIES ── */
+#industries{background:var(--dk2);}
+.ind-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;}
+.ind-card{background:var(--card);border:1px solid var(--bdr);border-radius:12px;padding:22px 18px;text-align:center;transition:border-color .25s,background .25s,transform .25s;cursor:default;}
+.ind-card:hover{border-color:rgba(0,255,135,0.35);background:var(--glass);transform:translateY(-4px);}
+.ind-ico{font-size:28px;margin-bottom:10px;}
+.ind-t{font-family:'Cabinet Grotesk',sans-serif;font-size:13.5px;font-weight:800;color:#fff;}
+
+/* ── WHY US ── */
+#why{background:var(--dk);}
+.why-row{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;}
+.why-list{display:flex;flex-direction:column;gap:2px;}
+.why-item{padding:22px 0;border-bottom:1px solid var(--bdr);display:flex;gap:16px;align-items:flex-start;cursor:default;}
+.why-item:first-child{border-top:1px solid var(--bdr);}
+.why-num{font-family:'Cabinet Grotesk',sans-serif;font-size:12px;font-weight:900;color:rgba(0,255,135,0.3);flex-shrink:0;margin-top:2px;letter-spacing:1px;}
+.why-body{}
+.why-t{font-family:'Cabinet Grotesk',sans-serif;font-size:17px;font-weight:800;color:#fff;margin-bottom:6px;transition:color .2s;}
+.why-item:hover .why-t{color:var(--g);}
+.why-d{font-size:13.5px;color:rgba(255,255,255,0.4);line-height:1.65;}
+.why-visual{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.wstat{background:var(--dk2);border:1px solid var(--bdr);border-radius:12px;padding:28px 20px;text-align:center;transition:border-color .2s;}
+.wstat:hover{border-color:rgba(0,255,135,0.3);}
+.wstat-n{font-family:'Cabinet Grotesk',sans-serif;font-size:42px;font-weight:900;color:var(--g);line-height:1;margin-bottom:6px;}
+.wstat-l{font-size:12px;color:rgba(255,255,255,0.3);letter-spacing:.5px;text-transform:uppercase;}
+
+/* ── PROCESS ── */
+#process{background:var(--dk2);}
+.process-steps{display:grid;grid-template-columns:repeat(5,1fr);gap:0;position:relative;}
+.process-steps::before{content:'';position:absolute;top:28px;left:10%;right:10%;height:1px;background:linear-gradient(90deg,transparent,rgba(0,255,135,0.3),transparent);}
+.pstep{text-align:center;padding:0 12px;position:relative;z-index:2;}
+.pstep-num{width:56px;height:56px;background:var(--dk2);border:2px solid rgba(0,255,135,0.3);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 18px;font-family:'Cabinet Grotesk',sans-serif;font-size:16px;font-weight:900;color:var(--g);transition:background .2s,border-color .2s;}
+.pstep:hover .pstep-num{background:var(--g);color:#050a06;border-color:var(--g);}
+.pstep-t{font-family:'Cabinet Grotesk',sans-serif;font-size:13.5px;font-weight:800;color:#fff;margin-bottom:6px;}
+.pstep-d{font-size:12px;color:rgba(255,255,255,0.35);line-height:1.6;}
+
+/* ── PORTFOLIO ── */
+#portfolio{background:var(--dk);}
+
+.port-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+.port-card{border-radius:14px;overflow:hidden;cursor:pointer;background:var(--dk2);border:1px solid rgba(0,255,135,0.08);transition:transform .35s,border-color .35s,box-shadow .35s;}
+.port-card:first-child{grid-column:span 2;}
+.port-card:hover{transform:translateY(-5px);border-color:rgba(0,255,135,0.25);box-shadow:0 20px 40px rgba(0,0,0,0.4);}
+.port-img-wrap{height:200px;overflow:hidden;position:relative;}
+.port-card:first-child .port-img-wrap{height:220px;}
+.port-bg{width:100%;height:100%;background-size:cover;background-position:center;transition:transform .5s ease;}
+.port-card:hover .port-bg{transform:scale(1.06);}
+.port-info{padding:16px 18px;}
+.port-cat{font-size:9.5px;font-weight:800;color:var(--g);letter-spacing:2px;text-transform:uppercase;margin-bottom:5px;}
+.port-name{font-family:'Cabinet Grotesk',sans-serif;font-size:16px;font-weight:900;color:#fff;letter-spacing:-.2px;margin-bottom:8px;}
+.port-desc{font-size:12px;color:rgba(255,255,255,0.35);line-height:1.5;}
+.port-label{display:none;}
+.port-ov{display:none;}
+
+/* ── TESTIMONIALS ── */
+#testimonials{background:var(--dk2);}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+.testi-card{background:var(--card);border:1px solid var(--bdr);border-radius:16px;padding:28px;transition:border-color .2s,transform .2s;}
+.testi-card:hover{border-color:rgba(0,255,135,0.25);transform:translateY(-3px);}
+.testi-stars{color:var(--g);font-size:14px;letter-spacing:2px;margin-bottom:14px;}
+.testi-text{font-size:14px;color:rgba(255,255,255,0.6);line-height:1.75;margin-bottom:20px;font-style:italic;}
+.testi-author{display:flex;align-items:center;gap:12px;padding-top:16px;border-top:1px solid var(--bdr);}
+.testi-av{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:900;color:#fff;font-family:'Cabinet Grotesk',sans-serif;flex-shrink:0;}
+.testi-name{font-family:'Cabinet Grotesk',sans-serif;font-weight:800;font-size:13.5px;color:#fff;}
+.testi-co{font-size:11.5px;color:rgba(255,255,255,0.3);}
+
+/* ── FAQ ── */
+#faq{background:var(--dk);}
+.faq-wrap{max-width:780px;margin:0 auto;}
+.faq-item{border-bottom:1px solid var(--bdr);}
+.faq-q{padding:20px 0;font-family:'Cabinet Grotesk',sans-serif;font-size:16px;font-weight:700;color:#fff;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:14px;transition:color .2s;}
+.faq-q:hover{color:var(--g);}
+.faq-icon{font-size:20px;color:var(--g);flex-shrink:0;transition:transform .3s;font-style:normal;}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease;}
+.faq-a-inner{padding:0 0 18px;font-size:14px;color:rgba(255,255,255,0.45);line-height:1.75;}
+.faq-item.open .faq-icon{transform:rotate(45deg);}
+.faq-item.open .faq-a{max-height:200px;}
+
+/* ── PRICING ── */
+#pricing{background:var(--dk2);}
+.price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+.price-card{background:var(--card);border:1px solid var(--bdr);border-radius:16px;padding:32px;position:relative;transition:transform .25s,border-color .25s;}
+.price-card:hover{transform:translateY(-4px);border-color:rgba(0,255,135,0.2);}
+.price-card.feat{background:var(--g);border-color:var(--g);}
+.pop-badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:#050a06;color:var(--g);font-size:10px;font-weight:800;padding:4px 14px;border-radius:20px;white-space:nowrap;border:1px solid var(--bdr);letter-spacing:.5px;}
+.price-plan{font-size:10.5px;font-weight:800;color:rgba(255,255,255,0.35);letter-spacing:2px;text-transform:uppercase;margin-bottom:10px;}
+.feat .price-plan{color:rgba(5,10,6,0.5);}
+.price-amt{font-family:'Cabinet Grotesk',sans-serif;font-size:40px;font-weight:900;color:#fff;line-height:1;margin-bottom:4px;letter-spacing:-1px;}
+.feat .price-amt{color:#050a06;}
+.price-per{font-size:12.5px;color:rgba(255,255,255,0.3);margin-bottom:22px;}
+.feat .price-per{color:rgba(5,10,6,0.5);}
+.price-div{height:1px;background:var(--bdr);margin-bottom:20px;}
+.feat .price-div{background:rgba(5,10,6,0.15);}
+.pf{display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;font-size:13px;color:rgba(255,255,255,0.55);line-height:1.4;}
+.feat .pf{color:rgba(5,10,6,0.7);}
+.pf-chk{color:var(--g);font-size:14px;flex-shrink:0;margin-top:1px;}
+.feat .pf-chk{color:#050a06;}
+.price-btn{display:block;text-align:center;margin-top:24px;padding:13px;border-radius:6px;font-size:13.5px;font-weight:800;text-decoration:none;transition:opacity .2s,border-color .2s;letter-spacing:.3px;}
+.pb-out{border:1.5px solid var(--bdr);color:#fff;}
+.pb-out:hover{border-color:var(--g);color:var(--g);}
+.pb-sol{background:#050a06;color:var(--g);}
+.pb-sol:hover{opacity:.85;}
+
+/* ── CTA ── */
+#cta-band{background:var(--g);padding:60px 5%;text-align:center;position:relative;overflow:hidden;}
+#cta-band::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(5,10,6,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(5,10,6,0.04) 1px,transparent 1px);background-size:40px 40px;}
+.cta-inner{max-width:700px;margin:0 auto;position:relative;z-index:1;}
+.cta-t{font-family:'Cabinet Grotesk',sans-serif;font-size:clamp(28px,4vw,50px);font-weight:900;color:#050a06;line-height:1.05;letter-spacing:-1px;margin-bottom:12px;}
+.cta-s{font-size:16px;color:rgba(5,10,6,0.6);margin-bottom:28px;line-height:1.6;}
+.cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+.cta-b1{background:#050a06;color:var(--g);padding:14px 30px;border-radius:6px;font-size:14px;font-weight:800;text-decoration:none;transition:opacity .2s;}
+.cta-b1:hover{opacity:.85;}
+.cta-b2{background:rgba(5,10,6,0.1);color:#050a06;padding:14px 30px;border-radius:6px;font-size:14px;font-weight:700;text-decoration:none;border:2px solid rgba(5,10,6,0.15);transition:background .2s;}
+.cta-b2:hover{background:rgba(5,10,6,0.18);}
+
+/* ── CONTACT ── */
+#contact{background:var(--dk);padding:100px 5%;}
+.contact-wrap{max-width:1200px;margin:0 auto;}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;margin-top:52px;}
+.cinfo{display:flex;flex-direction:column;gap:20px;}
+.ci-item{display:flex;align-items:flex-start;gap:14px;}
+.ci-ico{width:44px;height:44px;background:var(--glass);border:1px solid var(--bdr);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;}
+.ci-label{font-size:10px;font-weight:800;color:rgba(0,255,135,0.45);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:3px;}
+.ci-val{font-size:14px;color:#fff;font-weight:600;}
+.ci-val a{color:var(--g);text-decoration:none;}
+.wa-big{display:flex;align-items:center;justify-content:center;gap:10px;background:#25D366;color:#fff;padding:15px;border-radius:8px;font-size:15px;font-weight:800;text-decoration:none;transition:opacity .2s;margin-top:8px;}
+.wa-big:hover{opacity:.88;}
+.cform-wrap{background:var(--card);border:1px solid var(--bdr);border-radius:16px;padding:32px;}
+.cform-title{font-family:'Cabinet Grotesk',sans-serif;font-size:20px;font-weight:900;color:#fff;margin-bottom:4px;letter-spacing:-.3px;}
+.cform-sub{font-size:13px;color:rgba(255,255,255,0.35);margin-bottom:24px;}
+.f2-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.f2-grp{display:flex;flex-direction:column;gap:6px;}
+.f2-label{font-size:10.5px;font-weight:700;color:rgba(255,255,255,0.3);letter-spacing:.5px;text-transform:uppercase;}
+.f2-input{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:8px;padding:12px 16px;font-size:14px;color:#fff;font-family:'Satoshi',sans-serif;outline:none;transition:border-color .2s;width:100%;}
+.f2-input:focus{border-color:var(--g);}
+.f2-input::placeholder{color:rgba(255,255,255,0.18);}
+select.f2-input{background-color:#0a1f12;color:#fff;}
+.f2-input option{background:#0a1f12;color:#fff;}
+textarea.f2-input{resize:vertical;min-height:110px;}
+.f2-success{display:none;background:rgba(0,255,135,0.08);border:1px solid rgba(0,255,135,0.2);border-radius:8px;padding:14px;text-align:center;font-size:13.5px;color:var(--g);font-weight:700;}
+.f2-error{display:none;background:rgba(255,80,80,0.08);border:1px solid rgba(255,80,80,0.2);border-radius:8px;padding:14px;text-align:center;font-size:13.5px;color:#ff6b6b;}
+.f2-submit{width:100%;background:var(--g);color:#050a06;border:none;padding:14px;border-radius:8px;font-size:14px;font-weight:800;cursor:pointer;font-family:'Satoshi',sans-serif;transition:opacity .2s;letter-spacing:.3px;}
+.f2-submit:hover{opacity:.85;}
+
+/* ── FOOTER ── */
+footer{background:#020604;padding:56px 5% 28px;border-top:1px solid rgba(0,255,135,0.07);}
+.foot-top{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1.8fr 1fr 1fr 1fr;gap:40px;margin-bottom:44px;}
+.foot-logo-row{display:flex;align-items:center;gap:10px;text-decoration:none;margin-bottom:16px;}
+.foot-logo-row img{height:34px;object-fit:contain;}
+.foot-logo-txt{font-family:'Cabinet Grotesk',sans-serif;font-size:20px;font-weight:900;color:var(--g);letter-spacing:-.3px;}
+.foot-logo-txt span{color:#fff;}
+.foot-desc{font-size:13.5px;color:rgba(255,255,255,0.3);line-height:1.75;margin-bottom:18px;}
+.foot-soc{display:flex;gap:10px;}
+.fsoc{width:36px;height:36px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.07);border-radius:8px;display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:15px;transition:background .2s,border-color .2s;}
+.fsoc:hover{background:var(--glass);border-color:var(--bdr);}
+.foot-col-t{font-family:'Cabinet Grotesk',sans-serif;font-weight:800;color:#fff;font-size:13px;margin-bottom:16px;letter-spacing:.5px;}
+.foot-col-links{display:flex;flex-direction:column;gap:10px;}
+.foot-col-links a{font-size:13px;color:rgba(255,255,255,0.3);text-decoration:none;transition:color .2s;}
+.foot-col-links a:hover{color:var(--g);}
+.foot-bottom{max-width:1200px;margin:0 auto;border-top:1px solid rgba(255,255,255,0.05);padding-top:22px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
+.foot-copy{font-size:12.5px;color:rgba(255,255,255,0.2);}
+.foot-copy a{color:rgba(0,255,135,0.5);text-decoration:none;}
+.foot-badge{display:flex;align-items:center;gap:6px;font-size:12px;color:rgba(255,255,255,0.2);}
+.foot-badge-dot{width:6px;height:6px;background:var(--g);border-radius:50%;animation:pulse 2s infinite;}
+
+/* ── WHATSAPP ── */
+.wa-float{position:fixed;bottom:28px;right:28px;width:54px;height:54px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:24px;text-decoration:none;z-index:900;box-shadow:0 4px 20px rgba(37,211,102,0.35);animation:bob 3s infinite;}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+
+/* ── ANIMATIONS ── */
+.fu{opacity:0;transform:translateY(30px);transition:opacity .65s ease,transform .65s ease;}
+.fu.vis{opacity:1;transform:translateY(0);}
+
+/* ── MOBILE ── */
+@media(max-width:900px){
+  body{cursor:auto;}
+  .cursor,.cursor-ring{display:none;}
+  .topbar{display:none;}
+  .nav-links,.nav-badge{display:none;}
+  .hamburger{display:flex;}
+  .hero-inner{grid-template-columns:1fr;}.hero-right{display:none;}
+  .hero-stats-row{grid-template-columns:1fr 1fr;}
+  .svc-grid{grid-template-columns:1fr;}
+  .about-grid{grid-template-columns:1fr;}
+  .why-row{grid-template-columns:1fr;}
+  .ind-grid{grid-template-columns:1fr 1fr;}
+  .testi-grid{grid-template-columns:1fr;}
+  .process-steps{grid-template-columns:1fr 1fr;gap:24px;}
+  .process-steps::before{display:none;}
+  .port-grid{grid-template-columns:1fr;}
+  .port-card:first-child{grid-column:span 1;}
+  .price-grid{grid-template-columns:1fr;}
+  .contact-grid{grid-template-columns:1fr;}
+  .f2-row{grid-template-columns:1fr;}
+  .foot-top{grid-template-columns:1fr 1fr;}
+  .foot-bottom{flex-direction:column;text-align:center;}
+  .hero-h1{letter-spacing:-1px;}
+}
+</style>
+</head>
+<body>
+
+<!-- CUSTOM CURSOR -->
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursor-ring"></div>
+
+<a class="wa-float" href="https://wa.me/919629835281?text=Hi%20DesignMint!%20I%20visited%20DesignMint." target="_blank">💬</a>
+
+<!-- ANNOUNCEMENT -->
+<div class="announce">
+  <div class="announce-inner">
+    <span class="announce-badge">NEW</span>
+    GEO Service Launched — Get your brand visible on ChatGPT & Gemini in 2025
+    <a href="#services" style="color:#050a06;font-weight:800;text-decoration:underline;text-underline-offset:2px;">→ Learn More</a>
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<nav>
+  <a class="nav-logo" href="#hero">
+    <img src="designmint_logo.png" alt="DesignMint" id="nav-logo-img"
+      style="height:42px;width:auto;object-fit:contain;display:block;"
+      onerror="this.style.display='none';document.getElementById('nav-logo-fallback').style.display='flex';">
+    <span class="nav-logo-txt" id="nav-logo-fallback" style="display:none;">Design<span>Mint.</span></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="/services.html">Services</a></li>
+    <li><a href="#portfolio">Work</a></li>
+    <li><a href="/blog.html">Blog</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <a href="/cart.html" style="position:relative;background:rgba(0,255,135,0.08);border:1px solid rgba(0,255,135,0.15);border-radius:8px;padding:8px 14px;font-size:13px;color:#fff;font-weight:700;display:flex;align-items:center;gap:6px;">🛒 Cart <span id="cart-count" style="position:absolute;top:-6px;right:-6px;background:var(--g);color:#050a06;width:18px;height:18px;border-radius:50%;font-size:10px;font-weight:900;display:flex;align-items:center;justify-content:center;">0</span></a>
+    <a href="/signin.html" id="nav-signin" style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);color:#fff;padding:8px 16px;border-radius:6px;font-size:12.5px;font-weight:700;">Sign In</a>
+    <button id="theme-toggle" onclick="toggleTheme()" class="theme-toggle">☀️ Light</button>
+    <div class="nav-badge"><span class="nav-badge-dot"></span>Now Taking Projects</div>
+    <a class="nav-cta" href="#contact">Get Free Quote</a>
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-video-wrap">
+    <video autoplay muted loop playsinline id="hero-video">
+      <source src="hero-bg.mp4" type="video/mp4">
+    </video>
+    <div class="hero-video-overlay"></div>
+  </div>
+  <div class="hero-grid-bg"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-glow2"></div>
+  <div class="hero-inner">
+    <!-- LEFT -->
+    <div class="hero-left">
+      <div class="hero-eyebrow fu">
+        <span class="hero-dot" style="width:6px;height:6px;background:var(--g);border-radius:50%;animation:pulse 2s infinite;display:inline-block;"></span>
+        Worldwide · Global Standards · Digital Agency
+      </div>
+      <h1 class="hero-h1 fu">
+        <span class="line">We Don't Just</span>
+        <span class="line acc">Design Brands.</span>
+        <span class="line outline">We Build Empires.</span>
+      </h1>
+      <p class="hero-p fu">DesignMint is a global branding & digital marketing agency. We engineer brands that dominate markets — from identity design to AI search visibility. Worldwide delivery. PayPal accepted.</p>
+      <div class="hero-btns fu">
+        <a class="hbtn-p" href="#contact">Start Your Project <span>↗</span></a>
+        <a class="hbtn-s" href="#portfolio">View Our Work</a>
+      </div>
+      <div class="hero-stats-row fu">
+        <div class="hstat"><div class="hstat-n">20+</div><div class="hstat-l">Designs Done</div></div>
+        <div class="hstat"><div class="hstat-n">100%</div><div class="hstat-l">Satisfaction</div></div>
+        <div class="hstat"><div class="hstat-n">8+</div><div class="hstat-l">Services</div></div>
+        <div class="hstat"><div class="hstat-n">🌍</div><div class="hstat-l">Worldwide</div></div>
+      </div>
+    </div>
+    <!-- RIGHT -->
+    <div class="hero-right fu">
+      <div class="hero-card-big">
+        <div class="hcb-label">Our Services</div>
+        <div class="hcb-row"><div class="hcb-ico">🎨</div><div class="hcb-name">Brand Identity Design</div><div class="hcb-arr">→</div></div>
+        <div class="hcb-row"><div class="hcb-ico">📣</div><div class="hcb-name">Social Media Marketing</div><div class="hcb-arr">→</div></div>
+        <div class="hcb-row"><div class="hcb-ico">🔍</div><div class="hcb-name">SEO Optimization</div><div class="hcb-arr">→</div></div>
+        <div class="hcb-row"><div class="hcb-ico">📢</div><div class="hcb-name">Google & Meta Paid Ads</div><div class="hcb-arr">→</div></div>
+        <div class="hcb-row"><div class="hcb-ico">🖥️</div><div class="hcb-name">Website Design & UI</div><div class="hcb-arr">→</div></div>
+        <div class="hcb-row"><div class="hcb-ico">🌐</div><div class="hcb-name">GEO — AI Visibility</div><span style="background:rgba(0,255,135,0.1);color:var(--g);font-size:9px;font-weight:800;padding:2px 7px;border-radius:20px;">NEW</span></div>
+      </div>
+      <div class="hero-mini-cards">
+        <div class="hmc"><div class="hmc-n">Free</div><div class="hmc-l">Consultation</div></div>
+        <div class="hmc"><div class="hmc-n">24hr</div><div class="hmc-l">Reply Time</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-sec">
+  <div class="marquee-track">
+    <div class="marquee-item">Brand Identity <span class="marquee-sep"></span></div>
+    <div class="marquee-item">Logo Design <span class="marquee-sep"></span></div>
+    <div class="marquee-item">Social Media Marketing <span class="marquee-sep"></span></div>
+    <div class="marquee-item">SEO Optimization <span class="marquee-sep"></span></div>
+    <div class="marquee-item">Google & Meta Ads <span class="marquee-sep"></span></div>
+    <div class="marquee-item">Website Design <span class="marquee-sep"></span></div>
+    <div class="marquee-item">GEO — AI Visibility <span class="marquee-sep"></span></div>
+    <div class="marquee-item">Graphic Design <span class="marquee-sep"></span></div>
+    <div class="marquee-item">Content Creation <span class="marquee-sep"></span></div>
+    <div class="marquee-item">Brand Identity <span class="marquee-sep"></span></div>
+    <div class="marquee-item">Logo Design <span class="marquee-sep"></span></div>
+    <div class="marquee-item">Social Media Marketing <span class="marquee-sep"></span></div>
+    <div class="marquee-item">SEO Optimization <span class="marquee-sep"></span></div>
+    <div class="marquee-item">Google & Meta Ads <span class="marquee-sep"></span></div>
+    <div class="marquee-item">Website Design <span class="marquee-sep"></span></div>
+    <div class="marquee-item">GEO — AI Visibility <span class="marquee-sep"></span></div>
+    <div class="marquee-item">Graphic Design <span class="marquee-sep"></span></div>
+    <div class="marquee-item">Content Creation <span class="marquee-sep"></span></div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section id="services" class="sec">
+  <div class="sec-inner">
+    <div class="sec-head fu">
+      <div class="sec-tag">What We Do</div>
+      <h2 class="sec-title">End-to-End <span class="acc">Brand Engineering</span></h2>
+      <p class="sec-sub">Eight specialised services. One agency. Total brand domination — from design to digital.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc-card fu"><div class="svc-num">01 ——</div><span class="svc-ico">🎨</span><div class="svc-t">Brand Identity Design<span class="svc-tag-pill">Popular</span></div><div class="svc-d">Logo, palette, typography and complete brand guidelines that make you instantly recognizable — built to last decades.</div><a class="svc-link" href="#contact">Start Project <span>→</span></a></div>
+      <div class="svc-card fu"><div class="svc-num">02 ——</div><span class="svc-ico">📣</span><div class="svc-t">Social Media Marketing</div><div class="svc-d">Strategy-first content, reels and campaigns across Instagram, Facebook and LinkedIn that convert followers into customers.</div><a class="svc-link" href="#contact">Start Project <span>→</span></a></div>
+      <div class="svc-card fu"><div class="svc-num">03 ——</div><span class="svc-ico">🔍</span><div class="svc-t">SEO Optimization</div><div class="svc-d">Technical SEO, keyword architecture and content strategy engineered to dominate Google search rankings organically.</div><a class="svc-link" href="#contact">Start Project <span>→</span></a></div>
+      <div class="svc-card fu"><div class="svc-num">04 ——</div><span class="svc-ico">📢</span><div class="svc-t">Paid Ads — Google & Meta</div><div class="svc-d">High-ROAS ad campaigns with laser-precise audience targeting, systematic A/B testing and transparent performance reports.</div><a class="svc-link" href="#contact">Start Project <span>→</span></a></div>
+      <div class="svc-card fu"><div class="svc-num">05 ——</div><span class="svc-ico">🖥️</span><div class="svc-t">Website Design & UI</div><div class="svc-d">Conversion-optimised, lightning-fast websites built for mobile-first experiences that turn visitors into paying clients.</div><a class="svc-link" href="#contact">Start Project <span>→</span></a></div>
+      <div class="svc-card fu"><div class="svc-num">06 ——</div><span class="svc-ico">🌐</span><div class="svc-t">GEO — AI Search Visibility<span class="svc-tag-pill">New 2025</span></div><div class="svc-d">Generative Engine Optimization — we engineer your brand to appear in ChatGPT, Gemini and Perplexity answers. The future is here.</div><a class="svc-link" href="#contact">Start Project <span>→</span></a></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="sec">
+  <div class="sec-inner">
+    <div class="about-grid">
+      <div class="about-visual fu">
+        <div class="about-logo-frame">
+          <img src="designmint_logo.png" alt="DesignMint" style="width:100%;max-width:280px;object-fit:contain;display:block;" onerror="this.style.display='none'">
+        </div>
+        <div class="about-float about-float-1">
+          <div class="af-n">Worldwide</div>
+          <div class="af-l">Service Coverage</div>
+        </div>
+        <div class="about-float about-float-2">
+          <div class="af2-n">1yr+ Growing</div>
+          <div class="af2-l">Founded 2024</div>
+        </div>
+      </div>
+      <div class="about-content fu">
+        <div>
+          <div class="sec-tag">About DesignMint</div>
+          <h2 class="sec-title">Built to Make Brands <span class="acc">Unstoppable</span></h2>
+        </div>
+        <p class="about-story">DesignMint was founded with one belief — every business deserves a brand powerful enough to compete globally. With dual expertise in graphic design and digital marketing, DesignMint operates at the intersection of creativity and strategy, delivering world-class results at accessible prices globally.</p>
+        <div class="about-vals">
+          <div class="aval"><div class="aval-ico">🎨</div><div class="aval-t">Zero Templates</div><div class="aval-d">Every deliverable is crafted from scratch for your brand only.</div></div>
+          <div class="aval"><div class="aval-ico">📊</div><div class="aval-t">Data Obsessed</div><div class="aval-d">Every decision backed by analytics, not gut feeling.</div></div>
+          <div class="aval"><div class="aval-ico">⚡</div><div class="aval-t">Rapid Execution</div><div class="aval-d">Fast delivery cycles without sacrificing quality.</div></div>
+          <div class="aval"><div class="aval-ico">🌍</div><div class="aval-t">Global Thinking</div><div class="aval-d">Worldwide reach, global quality standards.</div></div>
+        </div>
+        <div class="founder-chip">
+          <div class="founder-av">M</div>
+          <div>
+            <div class="founder-name">Founder & CEO</div>
+            <div class="founder-role">Graphic Designer · Digital Marketer · Global</div>
+            <div class="founder-quote">"We don't just make things look good. We make them work."</div>
+          </div>
+          <a class="founder-wa" href="https://wa.me/919629835281" target="_blank">Talk to Me</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process" class="sec">
+  <div class="sec-inner">
+    <div class="sec-head center fu">
+      <div class="sec-tag">How We Work</div>
+      <h2 class="sec-title">Our <span class="acc">5-Step Process</span></h2>
+      <p class="sec-sub">A battle-tested process that delivers results every time — from first call to final launch.</p>
+    </div>
+    <div class="process-steps fu">
+      <div class="pstep"><div class="pstep-num">01</div><div class="pstep-t">Discovery</div><div class="pstep-d">Free consultation to understand your business, goals and competition.</div></div>
+      <div class="pstep"><div class="pstep-num">02</div><div class="pstep-t">Strategy</div><div class="pstep-d">Custom brand and marketing blueprint designed for your market.</div></div>
+      <div class="pstep"><div class="pstep-num">03</div><div class="pstep-t">Design</div><div class="pstep-d">Creative execution — logos, content, ads and website built from scratch.</div></div>
+      <div class="pstep"><div class="pstep-num">04</div><div class="pstep-t">Launch</div><div class="pstep-d">Go live across all platforms with full deployment support.</div></div>
+      <div class="pstep"><div class="pstep-num">05</div><div class="pstep-t">Grow</div><div class="pstep-d">Ongoing optimisation, reporting and scaling for consistent growth.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- INDUSTRIES -->
+<section id="industries" class="sec">
+  <div class="sec-inner">
+    <div class="sec-head center fu">
+      <div class="sec-tag">Industries</div>
+      <h2 class="sec-title">We Serve <span class="acc">Every Industry</span></h2>
+    </div>
+    <div class="ind-grid fu">
+      <div class="ind-card"><div class="ind-ico">🍽️</div><div class="ind-t">Food & Restaurants</div></div>
+      <div class="ind-card"><div class="ind-ico">🛒</div><div class="ind-t">Retail & E-commerce</div></div>
+      <div class="ind-card"><div class="ind-ico">🏥</div><div class="ind-t">Healthcare & Clinics</div></div>
+      <div class="ind-card"><div class="ind-ico">🎓</div><div class="ind-t">Education & Coaching</div></div>
+      <div class="ind-card"><div class="ind-ico">🏠</div><div class="ind-t">Real Estate</div></div>
+      <div class="ind-card"><div class="ind-ico">💻</div><div class="ind-t">Tech & Startups</div></div>
+      <div class="ind-card"><div class="ind-ico">👗</div><div class="ind-t">Fashion & Lifestyle</div></div>
+      <div class="ind-card"><div class="ind-ico">💰</div><div class="ind-t">Finance & Consulting</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section id="why" class="sec">
+  <div class="sec-inner">
+    <div class="sec-head fu">
+      <div class="sec-tag">Why DesignMint</div>
+      <h2 class="sec-title">The Agency That <span class="acc">Delivers.</span></h2>
+    </div>
+    <div class="why-row">
+      <div class="why-list fu">
+        <div class="why-item"><div class="why-num">01</div><div class="why-body"><div class="why-t">Results That Are Measurable</div><div class="why-d">Every campaign is tracked with real data. Monthly reports so you always see exactly what's working and what's growing.</div></div></div>
+        <div class="why-item"><div class="why-num">02</div><div class="why-body"><div class="why-t">All Services Under One Roof</div><div class="why-d">Design, SEO, ads, social and web — no juggling multiple agencies. One team, one strategy, zero friction.</div></div></div>
+        <div class="why-item"><div class="why-num">03</div><div class="why-body"><div class="why-t">Global Quality, Indian Pricing</div><div class="why-d">World-class output at prices built for Indian startups and SMEs. We craft a plan that fits your goals and budget perfectly.</div></div></div>
+        <div class="why-item"><div class="why-num">04</div><div class="why-body"><div class="why-t">Future-Proof with SEO + GEO</div><div class="why-d">We prepare your brand for both Google and AI search engines. You stay visible no matter how search evolves.</div></div></div>
+      </div>
+      <div class="why-visual fu">
+        <div class="wstat"><div class="wstat-n">20+</div><div class="wstat-l">Designs Delivered</div></div>
+        <div class="wstat"><div class="wstat-n">100%</div><div class="wstat-l">Satisfaction Rate</div></div>
+        <div class="wstat"><div class="wstat-n">48hr</div><div class="wstat-l">Avg Turnaround</div></div>
+        <div class="wstat"><div class="wstat-n">Free</div><div class="wstat-l">Consultation</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section id="portfolio" class="sec" style="padding-top:0;">
+  <div class="sec-inner">
+    <div class="sec-head fu">
+      <div class="sec-tag">Our Work</div>
+      <h2 class="sec-title">Brands We've <span class="acc">Built & Grown</span></h2>
+      <p class="sec-sub">Early-stage work that shows what we can do. Your brand could be our next showcase.</p>
+    </div>
+  </div>
+  <div class="port-grid fu">
+    <div class="port-card">
+      <div class="port-img-wrap"><div class="port-bg" style="background:url('5_brand_identity.png') center/cover,linear-gradient(135deg,#0d4a28,#15d472);"></div></div>
+      <div class="port-info">
+        <div class="port-cat">Brand Identity</div>
+        <div class="port-name">Complete Brand System</div>
+        <div class="port-desc">Logo · Color Palette · Typography · Brand Guidelines · Business Card</div>
+      </div>
+    </div>
+    <div class="port-card">
+      <div class="port-img-wrap"><div class="port-bg" style="background:url('2_social_media.png') center/cover,linear-gradient(135deg,#1a1a2e,#e94560);"></div></div>
+      <div class="port-info">
+        <div class="port-cat">Social Media</div>
+        <div class="port-name">Posts & Reels Design</div>
+        <div class="port-desc">Instagram · Facebook · Story · Reel Covers · Carousel Posts</div>
+      </div>
+    </div>
+    <div class="port-card">
+      <div class="port-img-wrap"><div class="port-bg" style="background:url('1_logo_designs.png') center/cover,linear-gradient(135deg,#bf360c,#ff8f00);"></div></div>
+      <div class="port-info">
+        <div class="port-cat">Logo Design</div>
+        <div class="port-name">Custom Logo Collection</div>
+        <div class="port-desc">4 unique logo designs · Multiple industries · All formats delivered</div>
+      </div>
+    </div>
+    <div class="port-card">
+      <div class="port-img-wrap"><div class="port-bg" style="background:url('4_digital_marketing.png') center/cover,linear-gradient(135deg,#0d47a1,#00bcd4);"></div></div>
+      <div class="port-info">
+        <div class="port-cat">Digital Marketing</div>
+        <div class="port-name">SEO & Growth Results</div>
+        <div class="port-desc">Traffic +320% · Google Page 1 · Monthly reporting · ROI tracked</div>
+      </div>
+    </div>
+    <div class="port-card">
+      <div class="port-img-wrap"><div class="port-bg" style="background:url('3_graphic_design.png') center/cover,linear-gradient(135deg,#4a148c,#e040fb);"></div></div>
+      <div class="port-info">
+        <div class="port-cat">Graphic Design</div>
+        <div class="port-name">Posters & Banners</div>
+        <div class="port-desc">Event posters · Product banners · Flyers · Brochures · Print-ready</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials" class="sec">
+  <div class="sec-inner">
+    <div class="sec-head center fu">
+      <div class="sec-tag">Client Stories</div>
+      <h2 class="sec-title">Brands That <span class="acc">Trust DesignMint</span></h2>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card fu">
+        <div class="testi-stars">★★★★★</div>
+        <div class="testi-text">"DesignMint completely transformed how our brand looks and feels online. The logo is stunning and our social media engagement tripled within a month."</div>
+        <div class="testi-author">
+          <div class="testi-av" style="background:#4285F4;">R</div>
+          <div><div class="testi-name">Ramesh Kumar</div><div class="testi-co">Retail Business, Chennai</div></div>
+        </div>
+      </div>
+      <div class="testi-card fu">
+        <div class="testi-stars">★★★★★</div>
+        <div class="testi-text">"Their GEO service is a game-changer. We now appear when potential patients ask ChatGPT about healthcare in our city. The team is outstanding."</div>
+        <div class="testi-author">
+          <div class="testi-av" style="background:#34A853;">P</div>
+          <div><div class="testi-name">Priya Lakshmi</div><div class="testi-co">Healthcare Clinic, Bangalore</div></div>
+        </div>
+      </div>
+      <div class="testi-card fu">
+        <div class="testi-stars">★★★★★</div>
+        <div class="testi-text">"Best value for money. Professional branding that looks like it cost 10x more. Our Google ranking improved dramatically. Highly recommend for any small business."</div>
+        <div class="testi-author">
+          <div class="testi-av" style="background:#EA4335;">S</div>
+          <div><div class="testi-name">Suresh Kannan</div><div class="testi-co">Restaurant Owner, Coimbatore</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="sec">
+  <div class="sec-inner">
+    <div class="sec-head center fu">
+      <div class="sec-tag">FAQ</div>
+      <h2 class="sec-title">Questions <span class="acc">Answered.</span></h2>
+    </div>
+    <div class="faq-wrap fu">
+      <div class="faq-item open">
+        <div class="faq-q" onclick="toggleFaq(this)">How long does a logo design take? <i class="faq-icon">+</i></div>
+        <div class="faq-a"><div class="faq-a-inner">Typically 2–4 business days. We deliver 3 unique concepts and include up to 3 revisions. All final files delivered in AI, PNG and PDF formats.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Do you work with clients worldwide? <i class="faq-icon">+</i></div>
+        <div class="faq-a"><div class="faq-a-inner">Yes — 100% remote, Worldwide. All deliverables are sent digitally via WhatsApp, email and Google Drive. No location limits whatsoever.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">What is GEO and why does my business need it? <i class="faq-icon">+</i></div>
+        <div class="faq-a"><div class="faq-a-inner">GEO (Generative Engine Optimization) gets your brand cited as an answer in ChatGPT, Google Gemini and Perplexity. As AI search replaces traditional search, GEO is the new SEO.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">What is included in the Starter Brand Identity package? <i class="faq-icon">+</i></div>
+        <div class="faq-a"><div class="faq-a-inner">Logo design with 3 unique concepts, brand color palette, business card design, social media kit and all source files — everything to launch a professional brand. WhatsApp us to discuss your project.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">How do I pay? What are the payment terms? <i class="faq-icon">+</i></div>
+        <div class="faq-a"><div class="faq-a-inner">We accept UPI, bank transfer and Google Pay. Payment is 50% advance and 50% on delivery. Full receipt issued for every payment. WhatsApp us to discuss your project.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Can I start small and upgrade later? <i class="faq-icon">+</i></div>
+        <div class="faq-a"><div class="faq-a-inner">Absolutely. Start with Starter, upgrade to Growth or Pro when ready. We credit your previous payment and ensure a smooth transition at every stage.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing" class="sec">
+  <div class="sec-inner">
+    <div class="sec-head center fu">
+      <div class="sec-tag">Investment</div>
+      <h2 class="sec-title">Custom <span class="acc">Packages.</span></h2>
+      <p class="sec-sub">Every business is unique. Tell us your goals — we craft the perfect plan for your business. No surprises, just results.</p>
+    </div>
+    <div class="price-grid">
+      <div class="price-card fu">
+        <div class="price-plan">Starter</div>
+        <div style="font-size:28px;margin:8px 0 4px;">🎨</div><div style="font-family:'Cabinet Grotesk',sans-serif;font-size:24px;font-weight:900;color:#fff;margin-bottom:4px;">Brand Identity</div><div class="price-per" style="margin-top:4px;">One-time · Perfect for new brands</div>
+        <div class="price-div"></div>
+        <div class="pf"><span class="pf-chk">✓</span>Logo Design — 3 Concepts</div>
+        <div class="pf"><span class="pf-chk">✓</span>Brand Color Palette</div>
+        <div class="pf"><span class="pf-chk">✓</span>Business Card Design</div>
+        <div class="pf"><span class="pf-chk">✓</span>Social Media Kit</div>
+        <div class="pf"><span class="pf-chk">✓</span>3 Revisions Included</div>
+        <div class="pf"><span class="pf-chk">✓</span>All Files — AI, PNG, PDF</div>
+        <a class="price-btn pb-out" href="https://wa.me/919629835281?text=Hi%20DesignMint!%20I%20want%20a%20custom%20quote%20for%20Brand%20Identity." target="_blank">Get Started</a>
+      </div>
+      <div class="price-card feat fu">
+        <div class="pop-badge">⭐ MOST POPULAR</div>
+        <div class="price-plan">Growth</div>
+        <div style="font-size:28px;margin:8px 0 4px;">📣</div><div style="font-family:'Cabinet Grotesk',sans-serif;font-size:24px;font-weight:900;color:#050a06;margin-bottom:4px;">Digital Growth</div><div class="price-per">Monthly retainer · Growing businesses</div>
+        <div class="price-div"></div>
+        <div class="pf"><span class="pf-chk">✓</span>Everything in Starter</div>
+        <div class="pf"><span class="pf-chk">✓</span>Social Media — 3 Posts/Week</div>
+        <div class="pf"><span class="pf-chk">✓</span>SEO Optimization</div>
+        <div class="pf"><span class="pf-chk">✓</span>Monthly Performance Report</div>
+        <div class="pf"><span class="pf-chk">✓</span>Google Business Optimization</div>
+        <div class="pf"><span class="pf-chk">✓</span>Dedicated Account Manager</div>
+        <a class="price-btn pb-sol" href="https://wa.me/919629835281?text=Hi%20DesignMint!%20I%20want%20a%20custom%20quote%20for%20Digital%20Marketing." target="_blank">Get Started</a>
+      </div>
+      <div class="price-card fu">
+        <div class="price-plan">Pro</div>
+        <div style="font-size:28px;margin:8px 0 4px;">🌐</div><div style="font-family:'Cabinet Grotesk',sans-serif;font-size:24px;font-weight:900;color:#fff;margin-bottom:4px;">Full Service</div><div class="price-per">Monthly retainer · Scaling brands</div>
+        <div class="price-div"></div>
+        <div class="pf"><span class="pf-chk">✓</span>Everything in Growth</div>
+        <div class="pf"><span class="pf-chk">✓</span>Google & Meta Paid Ads</div>
+        <div class="pf"><span class="pf-chk">✓</span>Website Design & Maintenance</div>
+        <div class="pf"><span class="pf-chk">✓</span>GEO — AI Search Visibility</div>
+        <div class="pf"><span class="pf-chk">✓</span>Weekly Strategy Calls</div>
+        <div class="pf"><span class="pf-chk">✓</span>Priority 24hr Support</div>
+        <a class="price-btn pb-out" href="https://wa.me/919629835281?text=Hi%20DesignMint!%20I%20want%20a%20custom%20quote%20for%20Full%20Service." target="_blank">Get Started</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<div id="cta-band">
+  <div class="cta-inner fu">
+    <div class="cta-t">Ready to Build an Unstoppable Brand?</div>
+    <div class="cta-s">Free consultation — no commitment, no pressure. Just an honest conversation about your brand.</div>
+    <div class="cta-btns">
+      <a class="cta-b1" href="https://wa.me/919629835281?text=Hi%20DesignMint!%20I%20want%20a%20free%20brand%20consultation." target="_blank">💬 WhatsApp Us</a>
+      <a class="cta-b2" href="mailto:designmint71@gmail.com">✉️ Send an Email</a>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-wrap">
+    <div class="sec-head fu">
+      <div class="sec-tag" style="color:var(--g);">Contact</div>
+      <h2 class="sec-title">Let's Build Something <span class="acc">Remarkable.</span></h2>
+    </div>
+    <div class="contact-grid">
+      <div class="cinfo fu">
+        <div class="ci-item"><div class="ci-ico">📞</div><div><div class="ci-label">Phone / WhatsApp</div><div class="ci-val"><a href="tel:+919629835281">+91 96298 35281</a></div></div></div>
+        <div class="ci-item"><div class="ci-ico">✉️</div><div><div class="ci-label">Email</div><div class="ci-val"><a href="mailto:designmint71@gmail.com">designmint71@gmail.com</a></div></div></div>
+        <div class="ci-item"><div class="ci-ico">📍</div><div><div class="ci-label">Coverage</div><div class="ci-val">Worldwide — 100% Remote</div></div></div>
+        <div class="ci-item"><div class="ci-ico">📸</div><div><div class="ci-label">Instagram</div><div class="ci-val"><a href="https://instagram.com/design_mint_media" target="_blank">@design_mint_media</a></div></div></div>
+        <div class="ci-item"><div class="ci-ico">🕐</div><div><div class="ci-label">Hours</div><div class="ci-val">Mon–Sat · 9 AM – 7 PM IST · Worldwide</div></div></div>
+        <a class="wa-big" href="https://wa.me/919629835281?text=Hi%20DesignMint!%20I%20want%20to%20start%20a%20project." target="_blank">💬 Free WhatsApp Consultation</a>
+      </div>
+      <div class="fu">
+        <form class="cform-wrap" action="https://formspree.io/f/mlgpwnyl" method="POST" onsubmit="sendForm(event)">
+          <div class="cform-title">Start a Project</div>
+          <div class="cform-sub">Fill in your details — DesignMint replies within 24 hours.</div>
+          <div class="f2-row" style="margin-bottom:13px;">
+            <div class="f2-grp"><label class="f2-label">Name *</label><input class="f2-input" type="text" name="name" placeholder="Your full name" required></div>
+            <div class="f2-grp"><label class="f2-label">Phone *</label><input class="f2-input" type="tel" name="phone" placeholder="+91 99999 99999" required></div>
+          </div>
+          <div class="f2-grp" style="margin-bottom:13px;"><label class="f2-label">Email</label><input class="f2-input" type="email" name="email" placeholder="your@email.com"></div>
+          <div class="f2-grp" style="margin-bottom:13px;">
+            <label class="f2-label">Service</label>
+            <select class="f2-input" name="service">
+              <option value="">Select a service</option>
+              <option>Brand Identity &amp; Logo Design</option>
+              <option>Social Media Marketing</option>
+              <option>SEO Optimization</option>
+              <option>Paid Ads — Google & Meta</option>
+              <option>Website Design</option>
+              <option>GEO — AI Visibility</option>
+              <option>Growth Package</option>
+              <option>Pro Package</option>
+            </select>
+          </div>
+          <div class="f2-grp" style="margin-bottom:13px;"><label class="f2-label">Message</label><textarea class="f2-input" name="message" placeholder="Tell us about your business and what you want to achieve..."></textarea></div>
+          <input type="hidden" name="_subject" value="New Project Enquiry — DesignMint">
+          <div class="f2-success" id="f2-success">✅ Sent! We reply within 24 hours.</div>
+          <div class="f2-error" id="f2-error">❌ Failed. Please WhatsApp directly.</div>
+          <button class="f2-submit" type="submit" id="f2-btn">Send Message ↗</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-top">
+    <div>
+      <a class="foot-logo-row" href="#hero">
+        <img src="designmint_logo.png" alt="DesignMint" style="height:32px;width:auto;object-fit:contain;" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+        <span class="foot-logo-txt">Design<span>Mint.</span></span>
+      </a>
+      <p class="foot-desc">A global-standard branding and digital marketing agency serving businesses Worldwide. Founded by DesignMint — where creativity meets strategy.</p>
+      <div class="foot-soc">
+        <a class="fsoc" href="https://instagram.com/design_mint_media" target="_blank">📸</a>
+        <a class="fsoc" href="https://wa.me/919629835281" target="_blank">💬</a>
+        <a class="fsoc" href="mailto:designmint71@gmail.com">✉️</a>
+      </div>
+    </div>
+    <div>
+      <div class="foot-col-t">Services</div>
+      <div class="foot-col-links">
+        <a href="#services">Brand Identity</a>
+        <a href="#services">Social Media</a>
+        <a href="#services">SEO</a>
+        <a href="#services">Paid Ads</a>
+        <a href="#services">Web Design</a>
+        <a href="#services">GEO — AI Search</a>
+      </div>
+    </div>
+    <div>
+      <div class="foot-col-t">Company</div>
+      <div class="foot-col-links">
+        <a href="#about">About DesignMint</a>
+        <a href="#portfolio">Our Work</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#process">Our Process</a>
+        <a href="#faq">FAQ</a>
+      </div>
+    </div>
+    <div>
+      <div class="foot-col-t">Contact</div>
+      <div class="foot-col-links">
+        <a href="tel:+919629835281">+91 96298 35281</a>
+        <a href="mailto:designmint71@gmail.com">designmint71@gmail.com</a>
+        <a href="https://instagram.com/design_mint_media" target="_blank">@design_mint_media</a>
+        <a href="#contact">Worldwide · Remote</a>
+        <a href="#contact">Mon–Sat 9AM–7PM IST</a>
+      </div>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <div class="foot-copy">© 2025 <a href="#hero">DesignMint</a>. All rights reserved. Founded by DesignMint.</div>
+    <div class="foot-badge"><span class="foot-badge-dot"></span>Worldwide · Global Standards</div>
+  </div>
+</footer>
+
+
+  <div class="ffp-sub">We reply within 24 hours — guaranteed</div>
+  <button class="ffp-close" onclick="toggleFloatForm()">✕</button>
+  <form onsubmit="sendFloatForm(event)">
+    <div class="ffp-field">
+      <input class="ffp-input" type="text" id="ff-name" placeholder="Your Name *" required>
+    </div>
+    <div class="ffp-field">
+      <input class="ffp-input" type="tel" id="ff-phone" placeholder="Phone Number *" required>
+    </div>
+    <div class="ffp-field">
+      <select class="ffp-input" id="ff-service">
+        <option value="">Select Service</option>
+        <option>Brand Identity & Logo</option>
+        <option>Social Media Marketing</option>
+        <option>SEO Optimization</option>
+        <option>Paid Ads — Google & Meta</option>
+        <option>Website Design</option>
+        <option>GEO — AI Visibility</option>
+        <option>Full Service Package</option>
+      </select>
+    </div>
+    <button class="ffp-btn" type="submit">Send Enquiry ↗</button>
+    <div class="ffp-success" id="ff-success">✅ Sent! Our team will contact you shortly.</div>
+  </form>
+</div>
+
+<script>
+
+async function sendFloatForm(e){
+  e.preventDefault();
+  const name = document.getElementById('ff-name').value;
+  const phone = document.getElementById('ff-phone').value;
+  const service = document.getElementById('ff-service').value || 'Not selected';
+  const msg = `Hi DesignMint! Quick Enquiry from website.%0A%0AName: ${encodeURIComponent(name)}%0APhone: ${encodeURIComponent(phone)}%0AService: ${encodeURIComponent(service)}`;
+  window.open(`https://wa.me/919629835281?text=${msg}`, '_blank');
+  document.getElementById('ff-success').style.display = 'block';
+  e.target.reset();
+  setTimeout(() => {
+    document.getElementById('ff-success').style.display = 'none';
+    document.getElementById('float-panel').classList.remove('open');
+  }, 3000);
+}
+
+// Cart badge update
+function updateCartBadge(){
+  const cart = JSON.parse(localStorage.getItem('dm_cart')||'[]');
+  const badge = document.getElementById('cart-count');
+  if(badge) badge.textContent = cart.length;
+}
+// Auth nav update
+function updateAuthNav(){
+  const u = JSON.parse(localStorage.getItem('dm_user')||'null');
+  const signInBtn = document.getElementById('nav-signin');
+  if(u && signInBtn){
+    signInBtn.textContent = u.name.split(' ')[0];
+    signInBtn.href = u.role==='admin' ? '/admin.html' : '#';
+    signInBtn.style.background = 'rgba(0,255,135,0.1)';
+    signInBtn.style.color = 'var(--g)';
+    signInBtn.style.borderColor = 'rgba(0,255,135,0.2)';
+  }
+}
+window.addEventListener('load', ()=>{ updateCartBadge(); updateAuthNav(); });
+
+
+// Theme system
+const THEME_KEY = 'dm_theme';
+function applyTheme(t){
+  document.body.classList.toggle('light', t==='light');
+  const btn = document.getElementById('theme-toggle');
+  if(btn) btn.innerHTML = t==='light' ? '🌙 Dark' : '☀️ Light';
+}
+function toggleTheme(){
+  const current = localStorage.getItem(THEME_KEY)||'dark';
+  const next = current==='dark'?'light':'dark';
+  localStorage.setItem(THEME_KEY, next);
+  applyTheme(next);
+}
+// Apply on load
+const savedTheme = localStorage.getItem(THEME_KEY)||'dark';
+applyTheme(savedTheme);
+
+// Custom cursor
+const cur = document.getElementById('cursor');
+const ring = document.getElementById('cursor-ring');
+if(cur && ring){
+  document.addEventListener('mousemove', e => {
+    cur.style.left = e.clientX + 'px'; cur.style.top = e.clientY + 'px';
+    setTimeout(() => { ring.style.left = e.clientX + 'px'; ring.style.top = e.clientY + 'px'; }, 80);
+  });
+  document.querySelectorAll('a,button').forEach(el => {
+    el.addEventListener('mouseenter', () => { ring.style.transform = 'translate(-50%,-50%) scale(2)'; ring.style.borderColor = 'rgba(0,255,135,0.6)'; });
+    el.addEventListener('mouseleave', () => { ring.style.transform = 'translate(-50%,-50%) scale(1)'; ring.style.borderColor = 'rgba(0,255,135,0.4)'; });
+  });
+}
+
+// Scroll animations
+const obs = new IntersectionObserver(es => es.forEach(e => { if(e.isIntersecting) e.target.classList.add('vis'); }), {threshold:0.07});
+document.querySelectorAll('.fu').forEach(el => obs.observe(el));
+
+// Mobile menu
+function toggleMenu(){
+  const ul = document.querySelector('.nav-links');
+  const open = ul.style.display === 'flex';
+  ul.style.cssText = open ? '' : 'display:flex;flex-direction:column;position:absolute;top:64px;left:0;right:0;background:rgba(5,10,6,0.98);padding:20px 5%;gap:14px;border-bottom:1px solid rgba(0,255,135,0.1);backdrop-filter:blur(20px);z-index:200;';
+}
+
+// FAQ
+function toggleFaq(el){
+  const item = el.parentElement;
+  const wasOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+  if(!wasOpen) item.classList.add('open');
+}
+
+// Contact form
+async function sendForm(e){
+  e.preventDefault();
+  const form = e.target;
+  const btn = document.getElementById('f2-btn');
+  const ok = document.getElementById('f2-success');
+  const err = document.getElementById('f2-error');
+  btn.textContent = 'Sending...'; btn.disabled = true;
+  ok.style.display='none'; err.style.display='none';
+  const payload = {
+    name: form.querySelector('[name="name"]').value,
+    phone: form.querySelector('[name="phone"]').value,
+    email: form.querySelector('[name="email"]').value || 'Not provided',
+    service: form.querySelector('[name="service"]').value || 'Not selected',
+    message: form.querySelector('[name="message"]').value || 'No message',
+    _subject: 'New Project Enquiry — DesignMint'
+  };
+  try {
+    const res = await fetch(form.action, { method:'POST', body:JSON.stringify(payload), headers:{'Accept':'application/json','Content-Type':'application/json'} });
+    if(res.ok){ ok.style.display='block'; form.reset(); btn.textContent='✅ Sent!'; btn.style.background='#00cc6a'; btn.disabled=false; }
+    else throw new Error();
+  } catch { err.style.display='block'; btn.textContent='Send Message ↗'; btn.disabled=false; }
+}
+</script>
+<script>
+// ── DESIGNMINT AUTH GUARD ──────────────────────────────────────
+// Rules:
+// 1. First visit ever → show welcome modal ONCE (not signin page)
+// 2. User clicks X / Skip → set flag, NEVER show again
+// 3. Only redirect to signin if user tries protected action (cart/enquiry)
+// 4. If already logged in → never show anything
+
+(function(){
+  const WELCOMED = 'dm_welcomed';
+  const user = JSON.parse(localStorage.getItem('dm_user')||'null');
+  
+  // If logged in, skip all this
+  if(user) return;
+  
+  // If already dismissed before, skip
+  if(localStorage.getItem(WELCOMED)) return;
+  
+  // Show welcome modal after 1.5s on first visit
+  setTimeout(showWelcomeModal, 1500);
+  
+  function showWelcomeModal(){
+    const overlay = document.createElement('div');
+    overlay.id = 'welcome-overlay';
+    overlay.style.cssText = 'position:fixed;inset:0;background:rgba(5,10,6,0.85);backdrop-filter:blur(8px);z-index:9999;display:flex;align-items:center;justify-content:center;padding:20px;animation:fadeIn .3s ease;';
+    
+    overlay.innerHTML = `
+      <div style="background:#0a140b;border:1px solid rgba(0,255,135,0.2);border-radius:20px;padding:36px;max-width:420px;width:100%;position:relative;text-align:center;">
+        <button onclick="dismissWelcome()" style="position:absolute;top:14px;right:16px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);color:rgba(255,255,255,0.5);width:28px;height:28px;border-radius:50%;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center;font-family:inherit;">✕</button>
+        <img src="designmint_logo.png" style="height:48px;margin-bottom:14px;" onerror="this.style.display='none'">
+        <div style="font-family:'Cabinet Grotesk',sans-serif;font-size:22px;font-weight:900;color:#fff;margin-bottom:6px;">Welcome to DesignMint</div>
+        <div style="font-size:13.5px;color:rgba(255,255,255,0.45);line-height:1.7;margin-bottom:24px;">Sign in or create a free account to enquire about our services, track your projects and get personalised quotes.</div>
+        <div style="display:flex;flex-direction:column;gap:10px;">
+          <a href="signin.html?redirect=${encodeURIComponent(window.location.href)}" onclick="localStorage.setItem('${WELCOMED}','1')" style="background:#00ff87;color:#050a06;padding:13px;border-radius:8px;font-size:14px;font-weight:800;display:block;">Sign In / Create Account →</a>
+          <button onclick="dismissWelcome()" style="background:transparent;border:1px solid rgba(255,255,255,0.1);color:rgba(255,255,255,0.5);padding:11px;border-radius:8px;font-size:13px;cursor:pointer;font-family:inherit;transition:border-color .2s;" onmouseover="this.style.borderColor='rgba(255,255,255,0.25)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.1)'">Continue Browsing as Guest</button>
+        </div>
+        <div style="font-size:11px;color:rgba(255,255,255,0.2);margin-top:14px;">You can always sign in later from the navbar</div>
+      </div>`;
+    
+    document.body.appendChild(overlay);
+    
+    // Close on backdrop click
+    overlay.addEventListener('click', function(e){
+      if(e.target === overlay) dismissWelcome();
+    });
+  }
+  
+  window.dismissWelcome = function(){
+    localStorage.setItem(WELCOMED, '1');
+    const el = document.getElementById('welcome-overlay');
+    if(el){ el.style.opacity='0'; el.style.transition='opacity .3s'; setTimeout(()=>el.remove(), 300); }
+  };
+})();
+
+// Protected action guard - only for cart/enquiry clicks
+window.requireAuth = function(redirectUrl){
+  const user = JSON.parse(localStorage.getItem('dm_user')||'null');
+  if(user) return true;
+  window.location.href = 'signin.html?redirect=' + encodeURIComponent(redirectUrl||window.location.href);
+  return false;
+};
+</script>
+</body>
+</html>

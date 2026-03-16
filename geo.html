@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>GEO — AI Search Visibility — DesignMint</title>
+<link href="https://fonts.googleapis.com/css2?family=Cabinet+Grotesk:wght@400;500;700;800;900&family=Satoshi:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--g:#00ff87;--dk:#050a06;--dk2:#0a140b;--tx:#e8f5eb;--mu:#7a9e82;--bdr:rgba(0,255,135,0.1);--card:rgba(255,255,255,0.03);}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Satoshi',sans-serif;background:var(--dk);color:var(--tx);overflow-x:hidden;}
+a{text-decoration:none;color:inherit;}
+nav{position:sticky;top:0;z-index:100;padding:0 5%;display:flex;align-items:center;justify-content:space-between;background:rgba(5,10,6,0.96);backdrop-filter:blur(20px);border-bottom:1px solid var(--bdr);}
+.fu{opacity:0;transform:translateY(20px);transition:opacity .55s ease,transform .55s ease;}
+.fu.vis{opacity:1;transform:translateY(0);}
+.btn-g{background:var(--g);color:#050a06;padding:12px 26px;border-radius:6px;font-size:13.5px;font-weight:800;border:none;cursor:pointer;font-family:inherit;display:inline-flex;align-items:center;gap:7px;transition:opacity .2s,transform .2s;}
+.btn-g:hover{opacity:.88;transform:translateY(-1px);}
+.btn-out{background:transparent;color:#fff;padding:12px 26px;border-radius:6px;font-size:13.5px;font-weight:700;border:1px solid rgba(255,255,255,0.15);cursor:pointer;font-family:inherit;transition:border-color .2s;}
+.btn-out:hover{border-color:var(--g);color:var(--g);}
+.f-grp{display:flex;flex-direction:column;gap:5px;margin-bottom:13px;}
+.f-label{font-size:10.5px;font-weight:700;color:rgba(255,255,255,0.35);letter-spacing:.5px;text-transform:uppercase;}
+.f-input{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.09);border-radius:8px;padding:11px 15px;font-size:13.5px;color:#fff;font-family:'Satoshi',sans-serif;outline:none;transition:border-color .2s;width:100%;}
+.f-input:focus{border-color:var(--g);}
+.f-input::placeholder{color:rgba(255,255,255,0.18);}
+select.f-input{background:#0a140b;}
+.f-input option{background:#0a140b;color:#fff;}
+textarea.f-input{resize:vertical;min-height:90px;}
+.wa-float{position:fixed;bottom:24px;right:24px;width:50px;height:50px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;z-index:900;box-shadow:0 4px 18px rgba(37,211,102,0.35);animation:bob 3s infinite;}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+footer{background:#020604;padding:36px 5% 22px;border-top:1px solid rgba(0,255,135,0.07);text-align:center;}
+.foot-txt{font-family:'Cabinet Grotesk',sans-serif;font-size:18px;font-weight:900;color:var(--g);margin-bottom:6px;}
+.foot-txt span{color:#fff;}
+.foot-copy{font-size:12px;color:rgba(255,255,255,0.2);margin-top:6px;}
+
+body.light{--g:#00b85e;--dk:#ffffff;--dk2:#f4faf6;--tx:#0a1a10;--mu:#4a6a55;--bdr:rgba(0,120,60,0.15);--card:rgba(0,0,0,0.03);background:#ffffff;color:#0a1a10;}
+body.light nav{background:rgba(255,255,255,0.97);border-bottom:1px solid rgba(0,120,60,0.12);}
+body.light .nav-logo-txt{color:#00b85e;}
+body.light .nav-logo-txt span{color:#0a1a10;}
+body.light .nav-links a{color:#3a5a45;}
+body.light .nav-cta{background:#00b85e;color:#fff;}
+body.light .announce{background:#00b85e;}
+body.light #hero,body.light .hero-sec,body.light .page-hero,body.light .blog-hero{background:#f0fdf6;}
+body.light .sec-title,body.light .hero-h1{color:#0a1a10;}
+body.light .sec-sub{color:#4a6a55;}
+body.light .svc-card,body.light .blog-card,body.light .price-card,body.light .card{background:#fff;border-color:rgba(0,0,0,0.08);}
+body.light .svc-t,body.light .bc-title,body.light .price-amt{color:#0a1a10;}
+body.light .svc-d,body.light .bc-excerpt,body.light .pf{color:#4a6a55;}
+body.light .faq-q{color:#0a1a10;}
+body.light .faq-a-inner{color:#4a6a55;}
+body.light footer{background:#0a1a10;}
+body.light .about-logo-frame{background:#0a1a10;}
+.theme-toggle{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:50px;padding:7px 14px;color:#fff;font-size:12.5px;font-weight:700;cursor:pointer;font-family:inherit;display:flex;align-items:center;gap:5px;}
+body.light .theme-toggle{background:rgba(0,0,0,0.06);border-color:rgba(0,0,0,0.12);color:#0a1a10;}
+
+
+.det-hero{background:var(--dk2);padding:70px 5%;border-bottom:1px solid var(--bdr);}
+.det-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 360px;gap:56px;align-items:start;}
+.breadcrumb{font-size:12px;color:rgba(255,255,255,0.3);margin-bottom:14px;}
+.breadcrumb a{color:var(--g);}
+.incl-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:20px;}
+.incl-item{display:flex;align-items:flex-start;gap:9px;background:var(--card);border:1px solid var(--bdr);border-radius:9px;padding:12px;}
+.incl-chk{color:var(--g);flex-shrink:0;font-size:14px;margin-top:1px;}
+.incl-txt{font-size:13px;color:rgba(255,255,255,0.65);line-height:1.4;}
+.proc-list{display:flex;flex-direction:column;gap:0;margin-top:20px;}
+.proc-step{display:flex;gap:14px;padding:18px 0;border-bottom:1px solid var(--bdr);}
+.proc-step:first-child{border-top:1px solid var(--bdr);}
+.proc-n{font-size:11px;font-weight:900;color:rgba(0,255,135,0.3);letter-spacing:1px;width:26px;flex-shrink:0;margin-top:2px;}
+.proc-t{font-family:'Cabinet Grotesk',sans-serif;font-size:16px;font-weight:800;color:#fff;margin-bottom:4px;}
+.proc-d{font-size:13px;color:rgba(255,255,255,0.4);line-height:1.6;}
+.eq-card{background:var(--card);border:1px solid var(--bdr);border-radius:16px;padding:24px;position:sticky;top:80px;}
+.eq-title{font-family:'Cabinet Grotesk',sans-serif;font-size:17px;font-weight:900;color:#fff;margin-bottom:4px;}
+.eq-sub{font-size:12px;color:rgba(255,255,255,0.35);margin-bottom:18px;}
+.eq-feats{display:flex;flex-direction:column;gap:8px;margin-bottom:18px;}
+.eq-feat{display:flex;align-items:center;gap:8px;font-size:12.5px;color:rgba(255,255,255,0.55);}
+.eq-feat-chk{color:var(--g);font-size:13px;}
+.add-btn{width:100%;background:var(--g);color:#050a06;padding:13px;border-radius:8px;font-size:13.5px;font-weight:800;border:none;cursor:pointer;font-family:inherit;margin-bottom:10px;transition:opacity .2s;}
+.add-btn:hover{opacity:.85;}
+.wa-btn2{width:100%;background:#25D366;color:#fff;padding:12px;border-radius:8px;font-size:13px;font-weight:700;border:none;cursor:pointer;font-family:inherit;display:flex;align-items:center;justify-content:center;gap:8px;}
+@media(max-width:900px){.det-inner{grid-template-columns:1fr;}.eq-card{position:static;}.incl-grid{grid-template-columns:1fr;}}
+
+</style>
+</head>
+<body>
+<a class="wa-float" href="https://wa.me/919629835281" target="_blank">💬</a>
+<div class="announce" style="background:var(--g);padding:8px 5%;text-align:center;font-size:12.5px;font-weight:700;color:#050a06;display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;">
+  <span style="background:#050a06;color:var(--g);font-size:9px;font-weight:800;padding:2px 7px;border-radius:20px;">NEW</span>
+  GEO Service — Appear on ChatGPT & Gemini 2025
+  <a href="../services.html" style="color:#050a06;font-weight:800;text-decoration:underline;">→ Learn More</a>
+</div>
+<nav>
+  <a class="nav-logo" href="../index.html" style="display:flex;align-items:center;gap:10px;padding:15px 0;text-decoration:none;">
+    <img src="../designmint_logo.png" alt="DesignMint" style="height:36px;width:auto;object-fit:contain;" onerror="this.style.display='none'">
+    <span class="nav-logo-txt" style="font-family:'Cabinet Grotesk',sans-serif;font-size:20px;font-weight:900;color:var(--g);letter-spacing:-.3px;">Design<span style="color:#fff;">Mint.</span></span>
+  </a>
+  <ul class="nav-links" id="nav-links" style="display:flex;gap:0;list-style:none;">
+    <li><a href="../index.html#about" style="display:block;padding:18px 13px;font-size:13px;font-weight:700;color:rgba(255,255,255,0.55);text-decoration:none;transition:color .2s;" onmouseover="this.style.color='var(--g)'" onmouseout="this.style.color='rgba(255,255,255,0.55)'">About</a></li>
+    <li><a href="../services.html" style="display:block;padding:18px 13px;font-size:13px;font-weight:700;color:rgba(255,255,255,0.55);text-decoration:none;transition:color .2s;" onmouseover="this.style.color='var(--g)'" onmouseout="this.style.color='rgba(255,255,255,0.55)'">Services</a></li>
+    <li><a href="../blog.html" style="display:block;padding:18px 13px;font-size:13px;font-weight:700;color:rgba(255,255,255,0.55);text-decoration:none;transition:color .2s;" onmouseover="this.style.color='var(--g)'" onmouseout="this.style.color='rgba(255,255,255,0.55)'">Blog</a></li>
+    <li><a href="../index.html#pricing" style="display:block;padding:18px 13px;font-size:13px;font-weight:700;color:rgba(255,255,255,0.55);text-decoration:none;transition:color .2s;" onmouseover="this.style.color='var(--g)'" onmouseout="this.style.color='rgba(255,255,255,0.55)'">Pricing</a></li>
+    <li><a href="../index.html#contact" style="display:block;padding:18px 13px;font-size:13px;font-weight:700;color:rgba(255,255,255,0.55);text-decoration:none;transition:color .2s;" onmouseover="this.style.color='var(--g)'" onmouseout="this.style.color='rgba(255,255,255,0.55)'">Contact</a></li>
+  </ul>
+  <div style="display:flex;align-items:center;gap:8px;">
+    <a href="../cart.html" style="background:rgba(0,255,135,0.08);border:1px solid rgba(0,255,135,0.15);border-radius:8px;padding:7px 13px;font-size:13px;color:#fff;font-weight:700;text-decoration:none;display:flex;align-items:center;gap:5px;">🛒 <span class="cart-badge">0</span></a>
+    <button id="nav-user-btn" style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);color:#fff;padding:7px 14px;border-radius:6px;font-size:12.5px;font-weight:700;cursor:pointer;font-family:inherit;">Sign In</button>
+    <button id="theme-toggle" onclick="Theme.toggle()" class="theme-toggle">☀️ Light</button>
+    <a href="../index.html#contact" style="background:var(--g);color:#050a06;padding:9px 18px;border-radius:6px;font-size:13px;font-weight:800;text-decoration:none;">Get Free Quote</a>
+    <div onclick="toggleMenu()" style="display:none;flex-direction:column;gap:5px;cursor:pointer;" id="hamburger">
+      <span style="width:20px;height:1.5px;background:#fff;border-radius:2px;display:block;"></span>
+      <span style="width:20px;height:1.5px;background:#fff;border-radius:2px;display:block;"></span>
+      <span style="width:20px;height:1.5px;background:#fff;border-radius:2px;display:block;"></span>
+    </div>
+  </div>
+</nav>
+<style>
+@media(max-width:768px){
+  #hamburger{display:flex!important;}
+  #nav-links{display:none;}
+}
+</style>
+
+<div class="det-hero">
+  <div class="det-inner">
+    <div class="fu">
+      <div class="breadcrumb"><a href="../index.html">Home</a> / <a href="../services.html">Services</a> / GEO — AI Search Visibility</div>
+      <div style="font-size:48px;margin-bottom:14px;">🌐</div>
+      <h1 style="font-family:'Cabinet Grotesk',sans-serif;font-size:clamp(26px,4vw,50px);font-weight:900;color:#fff;letter-spacing:-1px;line-height:1.05;margin-bottom:12px;">GEO — AI Search Visibility</h1>
+      <p style="font-size:15.5px;color:rgba(255,255,255,0.5);line-height:1.8;margin-bottom:22px;max-width:520px;">Generative Engine Optimization — appear when people ask ChatGPT, Gemini or Perplexity about your industry.</p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;">
+        <button class="btn-g" data-svc-id="geo" data-svc-name="GEO — AI Search Visibility" data-svc-type="Monthly retainer">🛒 Add to Cart</button>
+        <a href="../services.html" class="btn-out">← All Services</a>
+      </div>
+    </div>
+    <div class="eq-card fu">
+      <div class="eq-title">Get a Quote</div>
+      <div class="eq-sub">Free consultation · Reply within 24 hours</div>
+      <div class="eq-feats">
+        <div class="eq-feat"><span class="eq-feat-chk">✓</span>Free initial consultation</div>
+        <div class="eq-feat"><span class="eq-feat-chk">✓</span>Custom pricing for your budget</div>
+        <div class="eq-feat"><span class="eq-feat-chk">✓</span>Fast turnaround guaranteed</div>
+        <div class="eq-feat"><span class="eq-feat-chk">✓</span>Worldwide delivery — 100% remote</div>
+      </div>
+      <button class="add-btn" data-svc-id="geo" data-svc-name="GEO — AI Search Visibility" data-svc-type="Monthly retainer">🛒 Add to Cart & Enquire</button>
+      <a href="https://wa.me/919629835281?text=Hi!%20I%20want%20to%20know%20about%20GEO%20—%20AI%20Search%20Visibility" target="_blank" style="display:block;">
+        <button class="wa-btn2">💬 WhatsApp Us</button>
+      </a>
+    </div>
+  </div>
+</div>
+<section style="padding:70px 5%;"><div style="max-width:1100px;margin:0 auto;">
+  <div class="fu">
+    <div style="font-size:10px;font-weight:800;color:var(--g);letter-spacing:3px;text-transform:uppercase;margin-bottom:10px;">What's Included</div>
+    <h2 style="font-family:'Cabinet Grotesk',sans-serif;font-size:clamp(24px,3vw,40px);font-weight:900;color:#fff;letter-spacing:-1px;margin-bottom:6px;">Everything You <span style="color:var(--g);">Get</span></h2>
+    <div class="incl-grid"><div class="incl-item"><span class="incl-chk">✓</span><span class="incl-txt">AI visibility audit</span></div><div class="incl-item"><span class="incl-chk">✓</span><span class="incl-txt">Schema markup implementation</span></div><div class="incl-item"><span class="incl-chk">✓</span><span class="incl-txt">Entity SEO optimization</span></div><div class="incl-item"><span class="incl-chk">✓</span><span class="incl-txt">AI-friendly content creation</span></div><div class="incl-item"><span class="incl-chk">✓</span><span class="incl-txt">Google Knowledge Panel setup</span></div><div class="incl-item"><span class="incl-chk">✓</span><span class="incl-txt">ChatGPT/Gemini citation building</span></div><div class="incl-item"><span class="incl-chk">✓</span><span class="incl-txt">Monthly visibility report</span></div><div class="incl-item"><span class="incl-chk">✓</span><span class="incl-txt">Competitor GEO analysis</span></div></div>
+  </div>
+  <div class="fu" style="margin-top:56px;">
+    <div style="font-size:10px;font-weight:800;color:var(--g);letter-spacing:3px;text-transform:uppercase;margin-bottom:10px;">How We Work</div>
+    <h2 style="font-family:'Cabinet Grotesk',sans-serif;font-size:clamp(24px,3vw,40px);font-weight:900;color:#fff;letter-spacing:-1px;margin-bottom:6px;">Our <span style="color:var(--g);">Process</span></h2>
+    <div class="proc-list"><div class="proc-step"><div class="proc-n">01</div><div><div class="proc-t">Audit your current AI visibility</div></div></div><div class="proc-step"><div class="proc-n">02</div><div><div class="proc-t">Implement schema and entity SEO</div></div></div><div class="proc-step"><div class="proc-n">03</div><div><div class="proc-t">Create AI-optimized content</div></div></div><div class="proc-step"><div class="proc-n">04</div><div><div class="proc-t">Build citations and authority</div></div></div><div class="proc-step"><div class="proc-n">05</div><div><div class="proc-t">Monthly monitoring and reporting</div></div></div></div>
+  </div>
+</div></section>
+<div style="background:var(--g);padding:50px 5%;text-align:center;">
+  <h2 style="font-family:'Cabinet Grotesk',sans-serif;font-size:clamp(22px,3vw,36px);font-weight:900;color:#050a06;margin-bottom:10px;">Ready to Get Started?</h2>
+  <p style="font-size:14px;color:rgba(5,10,6,0.6);margin-bottom:22px;">Free consultation · No commitment · 24hr response</p>
+  <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+    <button class="btn-g" style="background:#050a06;color:var(--g);" data-svc-id="geo" data-svc-name="GEO — AI Search Visibility" data-svc-type="Monthly retainer">🛒 Add to Cart</button>
+    <a href="https://wa.me/919629835281" target="_blank" style="background:rgba(5,10,6,0.15);color:#050a06;padding:12px 26px;border-radius:6px;font-size:13.5px;font-weight:700;border:2px solid rgba(5,10,6,0.2);display:inline-block;">💬 WhatsApp Now</a>
+  </div>
+</div>
+
+<footer>
+  <div class="foot-txt">Design<span>Mint.</span></div>
+  <div class="foot-copy">© 2025 DesignMint. All rights reserved. Worldwide.</div>
+</footer>
+<script>
+const Auth={
+  get:()=>JSON.parse(localStorage.getItem('dm_user')||'null'),
+  set:(u)=>localStorage.setItem('dm_user',JSON.stringify(u)),
+  logout:()=>{localStorage.removeItem('dm_user');window.location.href='index.html';},
+  isAdmin:()=>{const u=Auth.get();return u&&u.role==='admin';}
+};
+const Cart={
+  get:()=>JSON.parse(localStorage.getItem('dm_cart')||'[]'),
+  add:(item)=>{let c=Cart.get();if(!c.find(i=>i.id===item.id))c.push(item);localStorage.setItem('dm_cart',JSON.stringify(c));Cart.badge();},
+  remove:(id)=>{localStorage.setItem('dm_cart',JSON.stringify(Cart.get().filter(i=>i.id!==id)));Cart.badge();updateCartBtns();},
+  has:(id)=>!!Cart.get().find(i=>i.id===id),
+  badge:()=>{document.querySelectorAll('.cart-badge').forEach(b=>b.textContent=Cart.get().length);}
+};
+const Theme={
+  apply:(t)=>{document.body.classList.toggle('light',t==='light');const b=document.getElementById('theme-toggle');if(b)b.innerHTML=t==='light'?'🌙 Dark':'☀️ Light';},
+  toggle:()=>{const n=document.body.classList.contains('light')?'dark':'light';localStorage.setItem('dm_theme',n);Theme.apply(n);}
+};
+window.addEventListener('load',()=>{
+  Theme.apply(localStorage.getItem('dm_theme')||'dark');
+  Cart.badge();
+  updateNavUser();
+  document.querySelectorAll('.fu').forEach(el=>new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis');}),{threshold:0.07}).observe(el));
+  updateCartBtns();
+});
+function updateNavUser(){
+  const u=Auth.get();
+  const nb=document.getElementById('nav-user-btn');
+  if(!nb)return;
+  if(u){nb.textContent=u.name.split(' ')[0];nb.style.color='var(--g)';nb.onclick=()=>{if(confirm('Sign out?'))Auth.logout();};}
+  else{nb.textContent='Sign In';nb.onclick=()=>{window.location.href='signin.html?r='+encodeURIComponent(window.location.href);};}
+}
+function toggleMenu(){
+  const ul=document.getElementById('nav-links');
+  if(!ul)return;
+  const o=ul.style.display==='flex';
+  ul.style.cssText=o?'':'display:flex;flex-direction:column;position:absolute;top:64px;left:0;right:0;background:rgba(5,10,6,0.98);padding:20px 5%;gap:14px;border-bottom:1px solid rgba(0,255,135,0.1);z-index:200;';
+}
+function updateCartBtns(){
+  document.querySelectorAll('[data-svc-id]').forEach(btn=>{
+    const id=btn.getAttribute('data-svc-id');
+    const name=btn.getAttribute('data-svc-name');
+    const type=btn.getAttribute('data-svc-type')||'Service';
+    if(Cart.has(id)){
+      btn.innerHTML='✕ Remove from Cart';
+      btn.style.cssText='background:rgba(255,80,80,0.12);color:#ff6b6b;border:1px solid rgba(255,80,80,0.25);';
+      btn.onclick=()=>{Cart.remove(id);showToast('Removed from cart','red');};
+    } else {
+      btn.innerHTML='+ Add to Cart';
+      btn.style.cssText='';
+      btn.onclick=()=>{Cart.add({id,name,type});updateCartBtns();showToast(name+' added!','green');};
+    }
+  });
+}
+function showToast(msg,color){
+  const t=document.createElement('div');
+  t.style.cssText='position:fixed;bottom:76px;left:50%;transform:translateX(-50%);background:'+(color==='green'?'#0a1a10':'#1a0808')+';border:1px solid '+(color==='green'?'rgba(0,255,135,0.3)':'rgba(255,80,80,0.3)')+';color:'+(color==='green'?'#00ff87':'#ff6b6b')+';padding:11px 22px;border-radius:50px;font-size:13px;font-weight:700;z-index:9999;white-space:nowrap;box-shadow:0 8px 24px rgba(0,0,0,0.4);';
+  t.textContent=msg;document.body.appendChild(t);
+  setTimeout(()=>{t.style.opacity='0';t.style.transition='opacity .3s';setTimeout(()=>t.remove(),300);},2500);
+}
+</script>
+
+
+</body>
+</html>
